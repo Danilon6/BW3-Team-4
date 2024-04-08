@@ -1,23 +1,26 @@
 {
   "users": [
     {
-      "id": 1,
-      "email": "danilo@gmail.com",
-      "password": "$2a$10$hHE9aR.KLZunnmyvjEliw.yLyndoUbfaZ.ANhNvfiPQxEhgdxC5.i",
-      "name": "Danilo",
+      "email": "mario@gmail.com",
+      "password": "$2a$10$e9hVTTxrjjXxu76dDcZGXOAQjRVhVEsxByIEwwalSUSBXnu4FYmcW",
+      "name": "mario",
+      "id": 2,
       "myPostIds": [
-        1,2,3
+        1,
+        2,
+        3
       ],
       "myFavoritePostIds": [
-        1,2,3
+        1,
+        2,
+        3
       ]
     }
   ],
   "posts": [
     {
       "id": 1,
-      "slug":"titolo-del-post",
-      "userid":1,
+      "slug": "titolo-del-post",
       "titolo": "Titolo del post",
       "autore": "Nome dell'autore",
       "contenuto": "Contenuto del post...",
@@ -25,15 +28,90 @@
       "categoria": "Categoria del post",
       "likes": 15,
       "commenti": [
-        1,2,3
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 1,
+      "slug": "titolo-del-post",
+      "titolo": "Titolo del post",
+      "autore": "Nome dell'autore",
+      "contenuto": "Contenuto del post...",
+      "data_pubblicazione": "",
+      "categoria": "Categoria del post",
+      "likes": 15,
+      "commenti": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "titolo-del-post",
+      "titolo": "Titolo del post",
+      "autore": "Nome dell'autore",
+      "contenuto": "Contenuto del post...",
+      "data_pubblicazione": "",
+      "categoria": "Categoria del post",
+      "likes": 15,
+      "commenti": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "titolo-del-post",
+      "titolo": "Titolo del post",
+      "autore": "Nome dell'autore",
+      "contenuto": "Contenuto del post...",
+      "data_pubblicazione": "",
+      "categoria": "Categoria del post",
+      "likes": 15,
+      "commenti": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "titolo-del-post",
+      "titolo": "Titolo del post",
+      "autore": "Nome dell'autore",
+      "contenuto": "Contenuto del post...",
+      "data_pubblicazione": "",
+      "categoria": "Categoria del post",
+      "likes": 15,
+      "commenti": [
+        1,
+        2,
+        3
       ]
     }
   ],
   "comments": [
     {
+      "id": 1,
+      "userId": 1,
+      "autore": "Altro autore",
+      "testo": "Altro commento...",
+      "data_commento": "2024-04-08T13:00:00"
+    },
+    {
       "id": 2,
-      "postId":1,
-      "userId":1,
+      "userId": 1,
+      "autore": "Altro autore",
+      "testo": "Altro commento...",
+      "data_commento": "2024-04-08T13:00:00"
+    },
+    {
+      "id": 3,
+      "userId": 1,
       "autore": "Altro autore",
       "testo": "Altro commento...",
       "data_commento": "2024-04-08T13:00:00"

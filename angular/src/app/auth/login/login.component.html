@@ -1,1 +1,15 @@
-<p>login works!</p>
+<form>
+  <input
+  type="email"
+  name="email"
+  [(ngModel)]="loginUser.email"
+  placeholder="email"
+  class="form-control my-2">
+  <input
+  type="password"
+  name="password"
+  [(ngModel)]="loginUser.password"
+  placeholder="password"
+  class="form-control my-2">
+  <button (click)="login()" class="btn btn-primary">INVIA</button>
+</form>

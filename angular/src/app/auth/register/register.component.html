@@ -1,1 +1,21 @@
-<p>register works!</p>
+<form>
+  <input
+    type="text"
+    name="nome"
+    [(ngModel)]="newUser.name"
+    placeholder="nome"
+    class="form-control my-2">
+  <input
+    type="email"
+    name="email"
+    [(ngModel)]="newUser.email"
+    placeholder="email"
+    class="form-control mb-2">
+  <input
+    type="password"
+    name="password"
+    [(ngModel)]="newUser.password"
+    placeholder="password"
+    class="form-control mb-2">
+  <button (click)="register()" class="btn btn-primary">INVIA</button>
+</form>

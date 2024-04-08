@@ -50,9 +50,11 @@ export class AuthService {
       }))
     }
 
-    login(loginData:iLoginData){
+    login(loginData:iLoginData):Observable<accessData>{
       return this.http.post<accessData>(this.loginUrl, loginData)
       .pipe(tap(data =>{
+        this.authSubject.next(data.user)
+        localStorage.setItem("accessData", JSON.stringify(data))
         this.autologout(data.accessToken)
       }))
     }
@@ -83,7 +85,6 @@ export class AuthService {
       this.authSubject.next(accessData.user)
       this.autologout(accessData.accessToken)
     }
-
 
     getAuthToken():string{
       const user = localStorage.getItem("accessData")
