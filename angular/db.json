@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "danilo@gmail.com",
+      "password": "$2a$10$hHE9aR.KLZunnmyvjEliw.yLyndoUbfaZ.ANhNvfiPQxEhgdxC5.i",
+      "name": "Danilo",
+      "myPostIds": [
+        1,2,3
+      ],
+      "myFavoritePostIds": [
+        1,2,3
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "slug":"titolo-del-post",
+      "userid":1,
+      "titolo": "Titolo del post",
+      "autore": "Nome dell'autore",
+      "contenuto": "Contenuto del post...",
+      "data_pubblicazione": "",
+      "categoria": "Categoria del post",
+      "likes": 15,
+      "commenti": [
+        1,2,3
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": 2,
+      "postId":1,
+      "userId":1,
+      "autore": "Altro autore",
+      "testo": "Altro commento...",
+      "data_commento": "2024-04-08T13:00:00"
+    }
+  ]
+}
