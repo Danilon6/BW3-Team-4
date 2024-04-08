@@ -1,14 +1,16 @@
 <nav *ngIf="isUserLoggedIn" class="navbar navbar-expand-lg bg">
   <div class="container-fluid">
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
       aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul [ngClass]="{
         'navbar-nav': true,
         'd-flex': !isUserLoggedIn,
-        'justify-content-between': !isUserLoggedIn,
+        'justify-content-center': !isUserLoggedIn,
         'w-100': true
       }">
         <li class="nav-item" *ngIf="!isUserLoggedIn">
@@ -16,8 +18,13 @@
         </li>
 
         <li class="nav-item" *ngIf="isUserLoggedIn">
-          <a class="nav-link" routerLink="/post">Post</a>
+          <a class="nav-link active text-white" routerLink="/post">Post</a>
         </li>
+
+        <li class="nav-item" *ngIf="isUserLoggedIn">
+          <a class="nav-link active text-white" routerLink="/profile">Profile</a>
+        </li>
+
         <li class="nav-item dropdown" *ngIf="isUserLoggedIn">
           <a class="nav-link dropdown-toggle" (click)="show = !show" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
@@ -28,6 +35,7 @@
             <li><a routerLink="account/details" class="dropdown-item">Account</a></li>
             <li><a (click)="logout()" class="dropdown-item" routerLink="/">Logout</a></li>
           </ul>
+
         </li>
       </ul>
     </div>
