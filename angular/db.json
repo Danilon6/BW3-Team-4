@@ -5,11 +5,6 @@
       "password": "$2a$10$e9hVTTxrjjXxu76dDcZGXOAQjRVhVEsxByIEwwalSUSBXnu4FYmcW",
       "name": "mario",
       "id": 2,
-      "myPostIds": [
-        1,
-        2,
-        3
-      ],
       "myFavoritePostIds": [
         1,
         2,
@@ -20,6 +15,7 @@
   "posts": [
     {
       "id": 1,
+      "userId":1,
       "slug": "titolo-del-post",
       "titolo": "Titolo del post",
       "autore": "Nome dell'autore",

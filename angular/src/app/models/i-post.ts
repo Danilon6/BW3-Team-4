@@ -1,5 +1,6 @@
 export interface iPost {
   id: number,
+  userId:number
   slug:string,
   titolo: string
   autore: string
