@@ -8,7 +8,7 @@ import { PostService } from '../../../services/post.service';
   styleUrl: './my-posts.component.scss'
 })
 export class MyPostsComponent {
-
+  editShow:boolean = false
   myPostArr:iPost[] = []
 
 
@@ -18,5 +18,15 @@ ngOnInit(){
   this.postSvc.$myPost.subscribe(myPostArr =>{
     this.myPostArr = myPostArr
 })
+}
+
+
+
+elimina(id:number){
+  this.postSvc.removePost(id).subscribe()
+}
+
+edit(post:iPost){
+  this.postSvc.editPost(post).subscribe()
 }
 }

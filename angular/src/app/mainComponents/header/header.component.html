@@ -20,6 +20,9 @@
         <li class="nav-item" *ngIf="isUserLoggedIn">
           <a class="nav-link" routerLink="/posts">Post</a>
         </li>
+        <li class="nav-item" *ngIf="isUserLoggedIn">
+          <a class="nav-link" routerLink="profile/favorites">preferiti</a>
+        </li>
 
         <li class="nav-item dropdown" *ngIf="isUserLoggedIn">
           <a class="nav-link dropdown-toggle" (click)="show = !show" role="button" data-bs-toggle="dropdown"

@@ -6,6 +6,7 @@ import { ProfileComponent } from './profile.component';
 import { DetailsComponent } from './user-details/details.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { MyPostsComponent } from './my-posts/my-posts.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MyPostsComponent } from './my-posts/my-posts.component';
   ],
   imports: [
     CommonModule,
-    ProfileRoutingModule
+    ProfileRoutingModule,
+    FormsModule
   ]
 })
 export class ProfileModule { }

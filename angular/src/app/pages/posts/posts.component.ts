@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { iPost } from '../../models/i-post';
 import { AuthService } from '../../auth/auth.service';
 import { PostService } from '../../services/post.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-posts',
@@ -10,22 +11,48 @@ import { PostService } from '../../services/post.service';
 })
 export class PostsComponent {
 
-  constructor(private authsvc:AuthService,
-    private postSvc:PostService,
-  ){
+  constructor(private authsvc: AuthService,
+    private postSvc: PostService,
+  ) {
   }
+  newPost: Partial<iPost> = {
+  }
+  postArr: iPost[] = []
 
-  postArr:iPost[]=[]
-
-  ngOnInit(){
-    this.postSvc.$post.subscribe(posts =>{
+  ngOnInit() {
+    this.postSvc.$post.subscribe(posts => {
       this.postArr = posts
     })
   }
 
-  logout(){
+  logout() {
     this.authsvc.logout()
   }
 
+  submitForm(newPost: NgForm) {
+    this.postSvc.addPost(this.newPost).subscribe()
+  }
+
+  likedCliked: boolean = false
+
+  like(post: iPost) {
+    if (!this.likedCliked) {
+      this.postSvc.addLike(post)
+      this.likedCliked = true
+    } else {
+      this.postSvc.removeLike(post)
+      this.likedCliked = false
+    }
+  }
+
+  favorite(id:number){
+    if (!this.likedCliked) {
+      this.postSvc.addToFavorite(id).subscribe()
+      this.likedCliked = true
+    } else {
+      this.postSvc.removeFavorite(id).subscribe()
+      this.likedCliked = false
+    }
+  }
 
 }

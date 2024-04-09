@@ -1,3 +1,21 @@
 <div>{{postArr | json}}</div>
 
 
+<div *ngFor="let post of postArr">
+
+<div>{{post.titolo}}</div>
+<div class="text-white">{{post.likes}}</div>
+<button (click)="like(post)"> LIKE</button>
+<button (click)="favorite(post.id)">ADD TO LIKED</button>
+</div>
+
+<form (ngSubmit)="submitForm(movieForm)" #movieForm="ngForm">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" name="title" [(ngModel)]="newPost.titolo"
+      placeholder="Enter title" required #title="ngModel">
+    <div *ngIf="title.invalid && title.dirty" class="alert alert-danger">
+      You must enter a title
+    </div>
+    </div>
+</form>

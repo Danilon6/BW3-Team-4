@@ -2,22 +2,32 @@
   "users": [
     {
       "email": "mario@gmail.com",
-      "password": "$2a$10$e9hVTTxrjjXxu76dDcZGXOAQjRVhVEsxByIEwwalSUSBXnu4FYmcW",
+      "password": "$2a$10$FaUyJEiQDgmUTW1I8Fu./OWokVYDhqT11183VeFp4qs6TGXBCZeei",
       "name": "mario",
       "id": 2,
       "myFavoritePostIds": [
-        1,
-        2,
-        3
+        7,
+        6,
+        8
+      ]
+    },
+    {
+      "email": "danilo@gmail.com",
+      "password": "$2a$10$2PJZ2Cc1v6TCzrA/jKKc4e45iFpsW88jGQNHL5Hsl0lH/iGA2FP56",
+      "name": "Danilo",
+      "id": 3,
+      "myFavoritePostIds": [
+        6,
+        7
       ]
     }
   ],
   "posts": [
     {
-      "id": 1,
-      "userId":1,
+      "id": 7,
+      "userId": 2,
       "slug": "titolo-del-post",
-      "titolo": "Titolo del post",
+      "titolo": "Titolo del post nuovo",
       "autore": "Nome dell'autore",
       "contenuto": "Contenuto del post...",
       "data_pubblicazione": "",
@@ -30,92 +40,19 @@
       ]
     },
     {
-      "id": 2,
-      "userId":2,
-      "slug": "titolo-del-post",
-      "titolo": "Titolo del post",
-      "autore": "Nome dell'autore",
-      "contenuto": "Contenuto del post...",
-      "data_pubblicazione": "",
-      "categoria": "Categoria del post",
-      "likes": 15,
-      "commenti": [
-        1,
-        2,
-        3
-      ]
+      "titolo": "new post",
+      "id": 6,
+      "userId": 2
     },
     {
-      "id": 3,
-      "userId":2,
-      "slug": "titolo-del-post",
-      "titolo": "Titolo del post",
-      "autore": "Nome dell'autore",
-      "contenuto": "Contenuto del post...",
-      "data_pubblicazione": "",
-      "categoria": "Categoria del post",
-      "likes": 15,
-      "commenti": [
-        1,
-        2,
-        3
-      ]
+      "titolo": "new post",
+      "id": 8,
+      "userId": 2
     },
     {
-      "id": 4,
-      "userId":3,
-      "slug": "titolo-del-post",
-      "titolo": "Titolo del post",
-      "autore": "Nome dell'autore",
-      "contenuto": "Contenuto del post...",
-      "data_pubblicazione": "",
-      "categoria": "Categoria del post",
-      "likes": 15,
-      "commenti": [
-        1,
-        2,
-        3
-      ]
-    },
-    {
-      "id": 5,
-      "userId":1,
-      "slug": "titolo-del-post",
-      "titolo": "Titolo del post",
-      "autore": "Nome dell'autore",
-      "contenuto": "Contenuto del post...",
-      "data_pubblicazione": "",
-      "categoria": "Categoria del post",
-      "likes": 15,
-      "commenti": [
-        1,
-        2,
-        3
-      ]
+      "titolo": "titolo diverso",
+      "id": 9
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "userId": 1,
-      "autore": "Altro autore",
-      "testo": "Altro commento...",
-      "data_commento": "2024-04-08T13:00:00"
-    },
-    {
-      "id": 2,
-      "userId": 1,
-      "autore": "Altro autore",
-      "testo": "Altro commento...",
-      "data_commento": "2024-04-08T13:00:00"
-    },
-    {
-
-    "id": 3,
-      "userId": 1,
-      "autore": "Altro autore",
-      "testo": "Altro commento...",
-      "data_commento": "2024-04-08T13:00:00"
-    }
-  ]
+  "comments": []
 }

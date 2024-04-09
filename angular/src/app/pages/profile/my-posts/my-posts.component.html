@@ -1,1 +1,15 @@
 {{myPostArr | json}}
+
+<div class="text-white" *ngFor="let post of myPostArr">
+  <p>{{post.titolo}}</p>
+  <button (click)="elimina(post.id)">ELIMINA</button>
+
+<button class="btn btn-outline-warning" (click)="editShow = !editShow"></button>
+
+  <form *ngIf="editShow">
+
+    <input type="text" name="titolo" [(ngModel)]="post.titolo">
+
+    <button (click)="edit(post)">MODIFICA</button>
+  </form>
+</div>
