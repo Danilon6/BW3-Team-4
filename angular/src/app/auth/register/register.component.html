@@ -3,15 +3,27 @@
 
   <form>
     <div class="user-box">
-      <input required="" name="" type="text" >
-      <label class="text-secondary">Inserisci Nome e Cognome</label>
+      <input
+      required=""
+      name="nome"
+      [(ngModel)]="newUser.name"
+      type="text" >
+      <label class="text-secondary">Inserisci Nome</label>
     </div>
     <div class="user-box">
-      <input required="" name="" type="email">
+      <input
+      required=""
+      name="email"
+      [(ngModel)]="newUser.email"
+      type="email">
       <label class="text-secondary"> Inserisci Email</label>
     </div>
     <div class="user-box">
-      <input required="" name="" type="password">
+      <input
+      required=""
+      name="password"
+      [(ngModel)]="newUser.password"
+      type="password">
       <label class="text-secondary">Inserisci Password</label>
     </div>
     <a (click)="register()" routerLink="/auth/login">

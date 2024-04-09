@@ -30,22 +30,8 @@
       ]
     },
     {
-      "id": 1,
-      "slug": "titolo-del-post",
-      "titolo": "Titolo del post",
-      "autore": "Nome dell'autore",
-      "contenuto": "Contenuto del post...",
-      "data_pubblicazione": "",
-      "categoria": "Categoria del post",
-      "likes": 15,
-      "commenti": [
-        1,
-        2,
-        3
-      ]
-    },
-    {
       "id": 2,
+      "userId":2,
       "slug": "titolo-del-post",
       "titolo": "Titolo del post",
       "autore": "Nome dell'autore",
@@ -61,6 +47,7 @@
     },
     {
       "id": 3,
+      "userId":2,
       "slug": "titolo-del-post",
       "titolo": "Titolo del post",
       "autore": "Nome dell'autore",
@@ -76,6 +63,23 @@
     },
     {
       "id": 4,
+      "userId":3,
+      "slug": "titolo-del-post",
+      "titolo": "Titolo del post",
+      "autore": "Nome dell'autore",
+      "contenuto": "Contenuto del post...",
+      "data_pubblicazione": "",
+      "categoria": "Categoria del post",
+      "likes": 15,
+      "commenti": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 5,
+      "userId":1,
       "slug": "titolo-del-post",
       "titolo": "Titolo del post",
       "autore": "Nome dell'autore",

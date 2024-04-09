@@ -24,6 +24,12 @@ export class PostService {
 
   $favoritePost = this.favoritePostSubject.asObservable()
 
+  userId!: number
+
+  mypostSubject = new BehaviorSubject<iPost[]>([])
+
+  $myPost = this.mypostSubject.asObservable()
+
   constructor(
     private http:HttpClient,
     private authSvc:AuthService
@@ -34,10 +40,21 @@ export class PostService {
 
       this.authSvc.$user.subscribe(user =>{
         if (user)
-        this.favoriteIds = user?.myFavoritePostIds
-      })
+          this.favoriteIds = user?.myFavoritePostIds
+        if (user) {
+          this.userId = user?.id
+        }
+      }
 
-      this.getFavorites()
+    )
+
+      const favoritePostArr = this.filterPosts(this.postArr, this.favoriteIds)
+
+      this.favoritePostSubject.next(favoritePostArr);
+
+      const myPost = this.filterPosts(this.postArr, this.userId )
+
+      this.mypostSubject.next(myPost)
     })
 
   }
@@ -51,9 +68,13 @@ getAnything<T>(apiUrl:string,attribute?:string, value?:string|number|boolean){
     return this.http.get<T[]>(apiUrl)
 }
 
-  getFavorites(){
-      this.favoritePostArr = this.postArr.filter(post => this.favoriteIds?.includes(post.id));
-      this.favoritePostSubject.next(this.favoritePostArr);
-      return this.favoritePostArr
-    }
+filterPosts(postsArr: iPost[], ids: number[] | number): iPost[] {
+  if (Array.isArray(ids)) {
+    return postsArr.filter((post) => ids.includes(post.id))
+  }
+  return this.postArr.filter(post => post.userId == ids)
+}
+
+
+
   }

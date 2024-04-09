@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProfileComponent } from './profile.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { DetailsComponent } from './user-details/details.component';
+import { MyPostsComponent } from './my-posts/my-posts.component';
 
 const routes: Routes = [
   {
@@ -14,6 +14,11 @@ const routes: Routes = [
     path:'user-details',
     component: DetailsComponent,
     title:'Details'
+  },
+  {
+    path:'my-post',
+    component: MyPostsComponent,
+    title:'I miei post'
   }
 ];
 
