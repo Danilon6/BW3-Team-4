@@ -1,21 +1,27 @@
-<form>
-  <input
-    type="text"
-    name="nome"
-    [(ngModel)]="newUser.name"
-    placeholder="nome"
-    class="form-control my-2">
-  <input
-    type="email"
-    name="email"
-    [(ngModel)]="newUser.email"
-    placeholder="email"
-    class="form-control mb-2">
-  <input
-    type="password"
-    name="password"
-    [(ngModel)]="newUser.password"
-    placeholder="password"
-    class="form-control mb-2">
-  <button (click)="register()" class="btn btn-primary">INVIA</button>
-</form>
+<div class="login-box">
+  <p>Crea un account </p>
+
+  <form>
+    <div class="user-box">
+      <input required="" name="" type="text" >
+      <label class="text-secondary">Inserisci Nome e Cognome</label>
+    </div>
+    <div class="user-box">
+      <input required="" name="" type="email">
+      <label class="text-secondary"> Inserisci Email</label>
+    </div>
+    <div class="user-box">
+      <input required="" name="" type="password">
+      <label class="text-secondary">Inserisci Password</label>
+    </div>
+    <a routerLink="/auth/login">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Registrati
+    </a>
+  </form>
+
+  <p>Hai un account ? <a routerLink="/auth/login" class="a2">Accedi </a></p>
+</div>
