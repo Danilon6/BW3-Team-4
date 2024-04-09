@@ -8,7 +8,7 @@
         'justify-content-center': !isUserLoggedIn,
         'w-100': true
       }">
-        <li class="nav-item" *ngIf="isUserLoggedIn">
+        <li class="nav-item" *ngIf="!isUserLoggedIn">
           <a class="nav-link active text-white" aria-current="page" routerLink="/">Home</a>
         </li>
 
@@ -29,7 +29,7 @@
           </ul>
 
         </li>
-        
+
       </ul>
       <button class="Btn" (click)="logout()">
 
