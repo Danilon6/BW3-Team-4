@@ -22,7 +22,7 @@ export class LoginComponent {
   login() {
     this.authSvc.login(this.loginUser)
       .subscribe(data => {
-        this.router.navigate(['posts'])
+        this.router.navigate(['/posts'])
       })
   }
 }

@@ -20,6 +20,16 @@
         6,
         7
       ]
+    },
+    {
+      "email": "antonio@gmail.com",
+      "password": "$2a$10$GR9fWW.w9.XVe.igsVqs9.0tUnVq2JmcpmlFMENPq/AQX708Qnfoe",
+      "name": "antonio",
+      "id": 4,
+      "myFavoritePostIds": [
+        6,
+        7
+      ]
     }
   ],
   "posts": [
@@ -42,7 +52,10 @@
     {
       "titolo": "new post",
       "id": 6,
-      "userId": 2
+      "userId": 2,
+      "commenti": [
+        3
+      ]
     },
     {
       "titolo": "new post",
@@ -54,5 +67,76 @@
       "id": 9
     }
   ],
-  "comments": []
+  "comments": [
+    {
+      "id": 1,
+      "userId": 2,
+      "autore": "Altro autore",
+      "testo": "Altro commento...",
+      "data_commento": "2024-04-08T13:00:00"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "autore": "Autore 2",
+      "testo": "Questo è un commento interessante.",
+      "data_commento": "2024-04-08T13:05:00"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "autore": "Autore 3",
+      "testo": "Mi piace questo post!",
+      "data_commento": "2024-04-08T13:10:00"
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "autore": "Autore 4",
+      "testo": "Interessante punto di vista.",
+      "data_commento": "2024-04-08T13:15:00"
+    },
+    {
+      "id": 5,
+      "userId": 3,
+      "autore": "Autore 5",
+      "testo": "Non sono d'accordo.",
+      "data_commento": "2024-04-08T13:20:00"
+    },
+    {
+      "id": 6,
+      "userId": 3,
+      "autore": "Autore 6",
+      "testo": "Questo argomento è molto attuale.",
+      "data_commento": "2024-04-08T13:25:00"
+    },
+    {
+      "id": 7,
+      "userId": 3,
+      "autore": "Autore 7",
+      "testo": "Concordo pienamente!",
+      "data_commento": "2024-04-08T13:30:00"
+    },
+    {
+      "id": 8,
+      "userId": 8,
+      "autore": "Autore 8",
+      "testo": "Sono curioso di saperne di più.",
+      "data_commento": "2024-04-08T13:35:00"
+    },
+    {
+      "id": 9,
+      "userId": 9,
+      "autore": "Autore 9",
+      "testo": "È un argomento complesso.",
+      "data_commento": "2024-04-08T13:40:00"
+    },
+    {
+      "id": 10,
+      "userId": 10,
+      "autore": "Autore 10",
+      "testo": "Grazie per la condivisione!",
+      "data_commento": "2024-04-08T13:45:00"
+    }
+  ]
 }

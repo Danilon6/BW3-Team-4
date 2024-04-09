@@ -5,25 +5,37 @@ import { iPost } from '../models/i-post';
 import { BehaviorSubject, Observable, map, of, switchMap, tap } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 import { iUser } from '../models/i-user';
+import { iComment } from '../models/i-comment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
 
+  // POST ARR BEHAVIORSUBJECT E OBSERVABLE
   postArr: iPost[] = []
 
   postSubject = new BehaviorSubject<iPost[]>([])
 
   $post = this.postSubject.asObservable()
 
-  favoriteIds: number[] = []
 
+  // FAVORITE ARR BEHAVIORSUBJECT E OBSERVABLE
+  favoriteIds: number[] = []
   favoritePostArr: iPost[] = []
 
   favoritePostSubject = new BehaviorSubject<iPost[]>([])
 
   $favoritePost = this.favoritePostSubject.asObservable()
+
+
+  // COMMENTI ARR BEHAVIORSUBJECT E OBSERVABLE
+
+  commentsArr: iComment[] = []
+
+  commentsSubject = new BehaviorSubject<iComment[]>([])
+
+  $comments = this.commentsSubject.asObservable()
 
   userId!: number
 
@@ -46,8 +58,12 @@ export class PostService {
           this.userId = user?.id
         }
       }
-
       )
+
+      this.getAnything<iComment>(this.commentsUrl).subscribe(comments => {
+        this.commentsSubject.next(comments)
+        this.commentsArr = comments
+      })
 
       const favoritePostArr = this.filterPosts(this.postArr, this.favoriteIds)
 
@@ -62,6 +78,7 @@ export class PostService {
 
   postUrl: string = environment.postsUrl
   userUrl: string = environment.usersUrl
+  commentsUrl: string = environment.commentsUrl
 
   getAnything<T>(apiUrl: string, attribute?: string, value?: string | number | boolean) {
     if (attribute && value) {
@@ -75,6 +92,10 @@ export class PostService {
       return postsArr.filter((post) => ids.includes(post.id))
     }
     return this.postArr.filter(post => post.userId == ids)
+  }
+
+  filterComment(commentsArr: iComment[], ids: number[]): iComment[] {
+      return commentsArr.filter((comment) => ids.includes(comment.id))
   }
 
 
@@ -160,4 +181,7 @@ export class PostService {
     if (!post) return
     return this.http.put<iPost>(`${this.postUrl}/${post.id}`, { ...post, likes: post.likes-- }).pipe()
   }
+
+
+
 }

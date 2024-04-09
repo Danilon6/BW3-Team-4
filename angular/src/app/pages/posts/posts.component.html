@@ -1,9 +1,17 @@
 <div>{{postArr | json}}</div>
 
 
-<div *ngFor="let post of postArr">
+<div class="text-white" *ngFor="let post of postArr; let i = index ">
 
 <div>{{post.titolo}}</div>
+<div>{{post.autore}}</div>
+<div>{{post.categoria}}</div>
+<button (click)="toggleComments(i); getcomment(post)" >MOSTRA COMMENTI</button>
+
+<div *ngIf="showComments[i]">
+  <div *ngFor="let commento of commentiPostArr[post.id]">{{commento.testo}} </div>
+</div>
+
 <div class="text-white">{{post.likes}}</div>
 <button (click)="like(post)"> LIKE</button>
 <button (click)="favorite(post.id)">ADD TO LIKED</button>
@@ -19,3 +27,4 @@
     </div>
     </div>
 </form>
+
