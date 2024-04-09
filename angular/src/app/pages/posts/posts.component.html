@@ -9,15 +9,21 @@
 <button (click)="toggleComments(i); getcomment(post)" >MOSTRA COMMENTI</button>
 
 <div *ngIf="showComments[i]">
+  <form (ngSubmit)="submitComment(commentForm, post)" #commentForm="ngForm">
+    <input type="text" name="testo" [(ngModel)]="comment.testo">
+    <button class="btn btn-outline-info">PUBBLICA</button>
+  </form>
   <div *ngFor="let commento of commentiPostArr[post.id]">{{commento.testo}} </div>
+
 </div>
 
 <div class="text-white">{{post.likes}}</div>
 <button (click)="like(post)"> LIKE</button>
 <button (click)="favorite(post.id)">ADD TO LIKED</button>
+
 </div>
 
-<form (ngSubmit)="submitForm(movieForm)" #movieForm="ngForm">
+<form (ngSubmit)="submitForm(commentForm)" #commentForm="ngForm">
   <div class="mb-3">
     <label for="title" class="form-label">Title</label>
     <input type="text" class="form-control" id="title" name="title" [(ngModel)]="newPost.titolo"

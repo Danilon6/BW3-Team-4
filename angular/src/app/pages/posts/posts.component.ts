@@ -4,6 +4,7 @@ import { iPost } from '../../models/i-post';
 import { AuthService } from '../../auth/auth.service';
 import { PostService } from '../../services/post.service';
 import { NgForm } from '@angular/forms';
+import { CommentsService } from '../../services/comments.service';
 
 
 @Component({
@@ -13,8 +14,11 @@ import { NgForm } from '@angular/forms';
 })
 export class PostsComponent {
 
+  comment:Partial<iComment> = {}
+
   constructor(private authsvc: AuthService,
     private postSvc: PostService,
+    private commentsSvc:CommentsService
   ) {
   }
   newPost: Partial<iPost> = {
@@ -33,7 +37,7 @@ export class PostsComponent {
       this.postArr = posts
     })
 
-    this.postSvc.$comments.subscribe(comments => {
+    this.commentsSvc.$comments.subscribe(comments => {
       this.commentsArr = comments
     })
 
@@ -45,6 +49,11 @@ export class PostsComponent {
 
   submitForm(newPost: NgForm) {
     this.postSvc.addPost(this.newPost).subscribe()
+  }
+  submitComment(newComment: NgForm, post:iPost) {
+    this.commentsSvc.addComment(this.comment, post).subscribe(() => {
+      newComment.reset()
+    })
   }
 
   likedCliked: boolean = false
@@ -76,7 +85,6 @@ export class PostsComponent {
     }
       const commenti = this.postSvc.filterComment(this.commentsArr, post.commenti)
       this.commentiPostArr[post.id] = commenti
-
   }
 
   showComments: boolean[] = [];
@@ -84,5 +92,6 @@ export class PostsComponent {
   toggleComments(index: number) {
     this.showComments[index] = !this.showComments[index];
   }
+
 
 }

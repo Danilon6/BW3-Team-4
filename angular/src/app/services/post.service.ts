@@ -29,13 +29,6 @@ export class PostService {
   $favoritePost = this.favoritePostSubject.asObservable()
 
 
-  // COMMENTI ARR BEHAVIORSUBJECT E OBSERVABLE
-
-  commentsArr: iComment[] = []
-
-  commentsSubject = new BehaviorSubject<iComment[]>([])
-
-  $comments = this.commentsSubject.asObservable()
 
   userId!: number
 
@@ -60,10 +53,6 @@ export class PostService {
       }
       )
 
-      this.getAnything<iComment>(this.commentsUrl).subscribe(comments => {
-        this.commentsSubject.next(comments)
-        this.commentsArr = comments
-      })
 
       const favoritePostArr = this.filterPosts(this.postArr, this.favoriteIds)
 
@@ -78,7 +67,7 @@ export class PostService {
 
   postUrl: string = environment.postsUrl
   userUrl: string = environment.usersUrl
-  commentsUrl: string = environment.commentsUrl
+
 
   getAnything<T>(apiUrl: string, attribute?: string, value?: string | number | boolean) {
     if (attribute && value) {
@@ -95,7 +84,7 @@ export class PostService {
   }
 
   filterComment(commentsArr: iComment[], ids: number[]): iComment[] {
-      return commentsArr.filter((comment) => ids.includes(comment.id))
+    return commentsArr.filter((comment) => ids.includes(comment.id))
   }
 
 
@@ -117,18 +106,18 @@ export class PostService {
   }
 
 
-  editPost(editPost:iPost): Observable<iPost> {
+  editPost(editPost: iPost): Observable<iPost> {
     return this.http.put<iPost>(this.postUrl + "/" + editPost.id, editPost)
-    .pipe(tap(() => {
-      this.postArr = this.postArr.map(post => {
-        if (post.id == editPost.id) {
-          return { ...post, ...editPost }
-        }
-        return post
-      })
+      .pipe(tap(() => {
+        this.postArr = this.postArr.map(post => {
+          if (post.id == editPost.id) {
+            return { ...post, ...editPost }
+          }
+          return post
+        })
         this.mypostSubject.next(this.postArr)
         this.postSubject.next(this.postArr)
-    }))
+      }))
   }
 
 
@@ -139,15 +128,15 @@ export class PostService {
           if (!user.myFavoritePostIds.includes(postId)) {
             const updatedMyFavoritePostIds = [...user.myFavoritePostIds, postId];
             return this.http.put<iUser>(`${this.userUrl}/${user.id}`, { ...user, myFavoritePostIds: updatedMyFavoritePostIds })
-            .pipe(tap(() => {
-              this.favoritePostArr = [...this.favoritePostArr, this.postArr.find(post => post.id === postId)!]
-              this.favoritePostSubject.next(this.favoritePostArr)
-            }))
+              .pipe(tap(() => {
+                this.favoritePostArr = [...this.favoritePostArr, this.postArr.find(post => post.id === postId)!]
+                this.favoritePostSubject.next(this.favoritePostArr)
+              }))
           }
           return of(null)
         }
         return this.http.put<iUser>(`${this.userUrl}/${user.id}`, { ...user, myFavoritePostIds: [postId] })
-        .pipe(tap(() => {
+          .pipe(tap(() => {
             this.favoritePostArr = [...this.favoritePostArr, this.postArr.find(post => post.id === postId)!]
             this.favoritePostSubject.next(this.favoritePostArr)
           }))
@@ -169,7 +158,7 @@ export class PostService {
   }
 
 
-  addLike(post:iPost){
+  addLike(post: iPost) {
     if (!post) return
     return this.http.put<iPost>(`${this.postUrl}/${post.id}`, { ...post, likes: post.likes++ })
     // .pipe(tap(() =>{
@@ -177,7 +166,7 @@ export class PostService {
     //   this.postSubject.next(this.postArr)
     // }))
   }
-  removeLike(post:iPost){
+  removeLike(post: iPost) {
     if (!post) return
     return this.http.put<iPost>(`${this.postUrl}/${post.id}`, { ...post, likes: post.likes-- }).pipe()
   }

@@ -3,5 +3,5 @@ export interface iComment {
   userId: number
   autore: string
   testo: string
-  data_commento: string
+  date: string
 }
