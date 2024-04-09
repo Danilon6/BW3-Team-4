@@ -1,5 +1,5 @@
 <div class="container py-5">
-<div class="row py-5">
+<div class="row ">
 
 
 
@@ -8,19 +8,31 @@
 
   <div class="input">
     <h2 class="text-secondary text-start text-danger fw-bolder"> Menù del Sito</h2>
-    <button class="value">
-      <svg
-        data-name="Layer 2"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 16 16"
-      >
-        <path
-          d="m1.5 13v1a.5.5 0 0 0 .3379.4731 18.9718 18.9718 0 0 0 6.1621 1.0269 18.9629 18.9629 0 0 0 6.1621-1.0269.5.5 0 0 0 .3379-.4731v-1a6.5083 6.5083 0 0 0 -4.461-6.1676 3.5 3.5 0 1 0 -4.078 0 6.5083 6.5083 0 0 0 -4.461 6.1676zm4-9a2.5 2.5 0 1 1 2.5 2.5 2.5026 2.5026 0 0 1 -2.5-2.5zm2.5 3.5a5.5066 5.5066 0 0 1 5.5 5.5v.6392a18.08 18.08 0 0 1 -11 0v-.6392a5.5066 5.5066 0 0 1 5.5-5.5z"
-          fill="#7D8590"
-        ></path>
-      </svg>
-      Profilo
-    </button>
+
+    <button class="value  button-message" id="btn-message">
+      <div class="content-avatar">
+        <div class="status-user"></div>
+        <div class="avatar">
+          <svg
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          class="user-img"
+          >
+          <path
+          d="M12,12.5c-3.04,0-5.5,1.73-5.5,3.5s2.46,3.5,5.5,3.5,5.5-1.73,5.5-3.5-2.46-3.5-5.5-3.5Zm0-.5c1.66,0,3-1.34,3-3s-1.34-3-3-3-3,1.34-3,3,1.34,3,3,3Z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <div class="notice-content">
+      <div class="username">Danilo Nebulosi</div>
+      <div class="lable-message">
+        Profilo<span class="number-message"></span>
+      </div>
+      <div class="user-id">daniloNebu</div>
+    </div>
+  </button>
+
     <button class="value">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="Line">
         <path
@@ -60,31 +72,9 @@
       </svg>
       Preferiti
     </button>
-  </div>
 
-  <button class="button-message" id="btn-message">
-    <div class="content-avatar">
-      <div class="status-user"></div>
-      <div class="avatar">
-        <svg
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          class="user-img"
-        >
-          <path
-            d="M12,12.5c-3.04,0-5.5,1.73-5.5,3.5s2.46,3.5,5.5,3.5,5.5-1.73,5.5-3.5-2.46-3.5-5.5-3.5Zm0-.5c1.66,0,3-1.34,3-3s-1.34-3-3-3-3,1.34-3,3,1.34,3,3,3Z"
-          ></path>
-        </svg>
-      </div>
-    </div>
-    <div class="notice-content">
-      <div class="username">Danilo Nebulosi</div>
-      <div class="lable-message">
-        Message<span class="number-message">3</span>
-      </div>
-      <div class="user-id">daniloNebu</div>
-    </div>
-  </button>
+
+</div>
 
 
 
@@ -93,6 +83,29 @@
 
 
 <div class="col-md-6  d-flex flex-column  ">
+
+  <div class="Search">
+    <div class="SearchInner">
+    <label>Fai una ricerca dei Post</label>
+
+    <div class="container align-items-center">
+      <div class="Icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <div class="InputContainer">
+        <input placeholder="How can i love Wickele..."/>
+      </div>
+      <button class="button ms-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill " viewBox="0 0 16 16">
+          <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z"/>
+        </svg>    <span class="lable">Post</span>
+  </button>
+    </div>
+   </div>
+  </div>
+
+
+
 
   <div class="cardcentral">
     <div class="body">
@@ -126,7 +139,7 @@
               </g></svg>0
           </div>
 
-          <label class="ui-bookmark">
+          <label class="ui-bookmark pt-2">
             <input type="checkbox" />
             <div class="bookmark">
               <svg viewBox="0 0 32 32">
@@ -192,11 +205,18 @@
 
 
 <div class="col-md-3  d-flex flex-column justify-content-center">
-<h2 class="text-primary"> Annunci pubblicitari</h2>
+  <div class="cardright mb-2">
+    <div>
+    </div>
+
+    <div class="heading text-primary text-center"> Annunci Pubblicitari
+
+    </div>
+  </div>
 
 <div class="cardright">
   <div>
-    <img class="card-image" [src]="'../../../assets/dariosexy.png'" alt="">
+    <img class="card-image " [src]="'../../../assets/dariosexy.png'" alt="">
   </div>
   <div class="category"> EpiXXXode.org</div>
   <div class="heading"> C'è un Dario CALDO a 3km da Te!
@@ -209,7 +229,7 @@
   <img class="card-image" [src]="'../../../assets/dariodorme.png'" alt="">
 </div>
 <div class="category"> EpikSleep</div>
-<div class="heading"> Con noi farai sogni <br>E P I C I
+<div class="heading"> Con noi farai sogni <span class="text-primary">E P I C I</span>
 
 </div>
 </div>
