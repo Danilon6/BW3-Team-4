@@ -1,11 +1,6 @@
 <nav *ngIf="isUserLoggedIn" class="navbar sticky-top navbar-expand-lg bg ">
   <div class="container-fluid">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul [ngClass]="{
         'navbar-nav': true,
@@ -21,8 +16,6 @@
           <a class="nav-link text-white" routerLink="/posts">Post</a>
         </li>
 
-
-
         <li class="nav-item dropdown" *ngIf="isUserLoggedIn">
           <a class="nav-link dropdown-toggle text-white" (click)="show = !show" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
@@ -36,17 +29,7 @@
           </ul>
 
         </li>
-
-        <li  class="nav-item" *ngIf="isUserLoggedIn">
-          <div class="toggle-switch">
-            <label class="switch-label">
-              <input type="checkbox" class="checkbox">
-              <span class="slider"></span>
-            </label>
-          </div>
-      </li>
-
-
+        
       </ul>
       <button class="Btn" (click)="logout()">
 

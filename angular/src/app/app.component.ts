@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BgcolorService } from './services/bgcolor.service';
 
 @Component({
   selector: 'app-root',
@@ -8,21 +7,11 @@ import { BgcolorService } from './services/bgcolor.service';
 })
 export class AppComponent {
   title = 'angular';
-  isDark:boolean = true
-  render: any;
-  backgroundColor: string;
+  isNightMode: boolean = false;
 
-constructor(private colorSvc:BgcolorService){
+  toggleNightMode(){
+    this.isNightMode = !this.isNightMode;
+  }
+}
 
-  this.backgroundColor = this.colorSvc.getBackgroundColor();
-}
-  changecolor(){
-    if(this.isDark){
-      this.render.setStyle(document.body,'background-color','#212121');
-}
-else{
-this.render.setStyle(document.body,'background-color','#fff')
-}
-this.isDark = !this.isDark;
-}
-}
+
