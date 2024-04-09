@@ -29,8 +29,9 @@
           <ul class="dropdown-menu" [ngClass]="{show}">
             <li><a routerLink="profile/favorites" class="dropdown-item">I tuoi preferiti</a></li>
             <li><a routerLink="profile/details" class="dropdown-item">Account</a></li>
-            <li><a (click)="logout()" class="dropdown-item" routerLink="/">Logout</a></li>
           </ul>
+
+          <div *ngIf="isUserLoggedIn" (click)="logout()" class="btn btn-outline-danger"> LOGOUT</div>
 
         </li>
       </ul>
