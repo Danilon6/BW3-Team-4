@@ -1,7 +1,8 @@
 .night-mode {
     background-image: url(../assets/img-white.jpg);
-    background-size: cover;
-    height: 100%;
+    background-size:cover;
+
+    
 
 }
 
@@ -12,7 +13,7 @@
     --light: #d8dbe0;
     --dark: #28292c;
   }
-  
+
   .switch-label {
     position: absolute;
     width: 100%;
@@ -22,11 +23,11 @@
     cursor: pointer;
     border: 3px solid var(--dark);
   }
-  
+
   .checkbox {
     display: none;
   }
-  
+
   .slider {
     position: absolute;
     width: 100%;
@@ -38,7 +39,7 @@
   .checkbox:checked ~ .slider {
     background-color: var(--light);
   }
-  
+
   .slider::before {
     content: "";
     position: absolute;
@@ -50,7 +51,7 @@
     box-shadow: inset 12px -4px 0px 0px var(--light);
     transition: 0.7s;
   }
-  
+
   .checkbox:checked ~ .slider::before {
     transform: translateX(50px);
     background-color: gold;

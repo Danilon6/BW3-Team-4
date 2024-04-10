@@ -49,9 +49,7 @@ export class PostsComponent {
 
   }
 
-  logout() {
-    this.authsvc.logout()
-  }
+ 
 
   submitForm(newPost: NgForm) {
     this.postSvc.addPost(this.newPost).subscribe()
