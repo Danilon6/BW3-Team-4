@@ -23,13 +23,18 @@
     },
     {
       "email": "antonio@gmail.com",
-      "password": "$2a$10$GR9fWW.w9.XVe.igsVqs9.0tUnVq2JmcpmlFMENPq/AQX708Qnfoe",
+      "password": "$2a$10$/9/.hzQILFVY7Ax0XPEQB.Q67esb.l1cbL1BwBt66B4IJHk1zRSPW",
       "name": "antonio",
       "id": 4,
       "myFavoritePostIds": [
-        6,
-        7
+        11
       ]
+    },
+    {
+      "email": "gianluca@gmail.com",
+      "password": "$2a$10$CIUBWuPheI8WdAyDeCYhGesC13DFLEEWIzjBEuVQVCLK8TVOnQpha",
+      "name": "Gianluca",
+      "id": 5
     }
   ],
   "posts": [
@@ -69,6 +74,11 @@
     {
       "titolo": "nuovo post",
       "id": 10
+    },
+    {
+      "titolo": "bel post",
+      "likes": 0,
+      "id": 11
     }
   ],
   "comments": [

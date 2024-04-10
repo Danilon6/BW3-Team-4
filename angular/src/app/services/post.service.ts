@@ -89,7 +89,8 @@ export class PostService {
 
 
   addPost(newPost: Partial<iPost>): Observable<iPost> {
-    return this.http.post<iPost>(this.postUrl, newPost)
+    const newPostObj = {...newPost, likes: 0}
+    return this.http.post<iPost>(this.postUrl, newPostObj )
       .pipe(tap((post) => {
         this.postArr.push(post)
         this.postSubject.next(this.postArr)

@@ -15,20 +15,16 @@
         <li class="nav-item" *ngIf="isUserLoggedIn">
           <a class="nav-link text-white" routerLink="/posts">Post</a>
         </li>
-        <li class="nav-item" *ngIf="isUserLoggedIn">
-          <a class="nav-link" routerLink="profile/favorites">preferiti</a>
-        </li>
 
         <li class="nav-item dropdown" *ngIf="isUserLoggedIn">
           <a class="nav-link dropdown-toggle text-white" (click)="show = !show" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             Profile
           </a>
-          <ul class="dropdown-menu bg-secondary " [ngClass]="{show}">
-            <li><a  routerLink="profile/favorites" class="dropdown-item ">Il tuo Account</a></li>
-            <li><a routerLink="profile/details" class="dropdown-item  ">I tuoi post</a></li>
-            <li><a routerLink="profile/details" class="dropdown-item  ">I tuoi post preferiti</a></li>
-            <li><a routerLink="profile/details" class="dropdown-item  ">I tuoi commenti</a></li>
+          <ul *ngIf="isUserLoggedIn" class="dropdown-menu bg-secondary " [ngClass]="{show}">
+            <li><a  routerLink="profile/user-details" class="dropdown-item ">Il tuo Account</a></li>
+            <li><a routerLink="profile/my-post" class="dropdown-item  ">I tuoi post</a></li>
+            <li><a routerLink="profile/favorites" class="dropdown-item  ">I tuoi post preferiti</a></li>
           </ul>
 
         </li>

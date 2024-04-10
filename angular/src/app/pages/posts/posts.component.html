@@ -107,16 +107,19 @@
 
 
 
-  <div class="cardcentral">
+  <div *ngFor="let post of postArr;let i = index" class="cardcentral">
     <div class="body">
+      <h2>{{post.autore}}</h2>
+      <p>{{post.titolo}}</p>
       <p class="text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In massa ipsum,
-        laoreet quis mollis nec, feugiat in dui. Suspendisse et enim pretium,
-        ullamcorper enim laoreet.
+        {{post.contenuto}}
+      </p>
+      <p class="text">
+        {{post.categoria}}
       </p>
       <div class="footer">
         <div>
-          <div>
+          <div (click)="toggleComments(i); getcomment(post)">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -138,9 +141,11 @@
               </g></svg>0
           </div>
 
+
+
           <label class="ui-bookmark pt-2">
             <input type="checkbox" />
-            <div class="bookmark">
+            <div (click)="favorite(post.id)" class="bookmark">
               <svg viewBox="0 0 32 32">
                 <g>
                   <path
@@ -151,7 +156,7 @@
             </div>
           </label>
 
-          <div title="Like" class="heart-container">
+          <div (click)="like(post)" title="Like" class="heart-container">
             <input id="Give-It-An-Id" class="checkbox" type="checkbox" />
             <div class="svg-container">
               <svg
@@ -181,8 +186,19 @@
               </svg>
             </div>
           </div>
+          <div class="text-dark">{{post.likes}}</div>
         </div>
       </div>
+
+      <!-- INIZIO SEZIONE COMMENTI -->
+      <div *ngIf="showComments[i]" class="bg-dark">
+        <form (ngSubmit)="submitComment(commentForm, post)" #commentForm="ngForm">
+          <input type="text" name="testo" [(ngModel)]="comment.testo">
+          <button class="btn btn-outline-info">PUBBLICA</button>
+        </form>
+        <div *ngFor="let commento of commentiPostArr[post.id]">{{commento.testo}} </div>
+      </div>
+      <!-- FINE SEZIONE COMMENTI -->
     </div>
   </div>
 
@@ -233,29 +249,25 @@
 
 
 
-<div class="text-white" *ngFor="let post of postArr; let i = index ">
+<!-- <div class="text-white" *ngFor="let post of postArr; let i = index ">
 
 <div>{{post.titolo}}</div>
 <div>{{post.autore}}</div>
 <div>{{post.categoria}}</div>
 <button (click)="toggleComments(i); getcomment(post)" >MOSTRA COMMENTI</button>
 
-<div *ngIf="showComments[i]">
-  <form (ngSubmit)="submitComment(commentForm, post)" #commentForm="ngForm">
-    <input type="text" name="testo" [(ngModel)]="comment.testo">
-    <button class="btn btn-outline-info">PUBBLICA</button>
-  </form>
-  <div *ngFor="let commento of commentiPostArr[post.id]">{{commento.testo}} </div>
 
-</div>
 
 <div class="text-white">{{post.likes}}</div>
 <button (click)="like(post)"> LIKE</button>
 <button (click)="favorite(post.id)">ADD TO LIKED</button>
 
-</div>
+</div> -->
 
-<form (ngSubmit)="submitForm(commentForm)" #commentForm="ngForm">
+
+<!-- TEST ADD -->
+
+<!-- <form (ngSubmit)="submitForm(commentForm)" #commentForm="ngForm">
   <div class="mb-3">
     <label for="title" class="form-label">Title</label>
     <input type="text" class="form-control" id="title" name="title" [(ngModel)]="newPost.titolo"
@@ -265,4 +277,4 @@
     </div>
     </div>
 </form>
-
+-->
