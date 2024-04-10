@@ -24,7 +24,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </div>
       <div class="InputContainer">
-        <input placeholder="How can i love Wickele..."/>
+        <input class="input" placeholder="How can i love Wickele..."/>
       </div>
       <button onclick="window.dialog.showModal();" class="button ms-3 ">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill " viewBox="0 0 16 16">
@@ -138,17 +138,21 @@
       </div>
 
       <!-- INIZIO SEZIONE COMMENTI -->
-      <div *ngIf="showComments[i]">
-        <form (ngSubmit)="submitComment(commentForm, post)" #commentForm="ngForm">
-          <input type="text" name="testo" [(ngModel)]="comment.testo">
-          <button class="btn btn-outline-info">PUBBLICA</button>
-        </form>
-        <div *ngFor="let commento of commentiPostArr[post.id]">
-          {{commento.testo}}
-          <div *ngIf="loggedUserName === commento.autore">
-          <button (click)="deleteComment(commento.id)">ELIMINA</button>
+      <div *ngIf="showComments[i]" class="actionBox pt-4">
+        <div *ngFor="let commento of commentiPostArr[post.id] ">
+          <div class="commentText">
+            <p class="">{{commento.testo}}</p> <span class="date sub-text">on March 5th, 2014</span>
           </div>
         </div>
+        <form class="d-flex align-items-center" role="form" (ngSubmit)="submitComment(commentForm, post)" #commentForm="ngForm">
+          <div class="form-group">
+            <textarea class="rounded" type="text" name="testo" [(ngModel)]="comment.testo" placeholder="cosa ne pensi?"></textarea>
+          </div>
+
+          <div class="form-group ms-3">
+            <button class="btn btn-dark">Add</button>
+          </div>
+        </form>
       </div>
       <!-- FINE SEZIONE COMMENTI -->
     </div>

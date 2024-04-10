@@ -43,6 +43,23 @@
       "slug": "luigi",
       "id": 6,
       "myFavoritePostIds": []
+    },
+    {
+      "email": "andre@xfede.it",
+      "password": "$2a$10$JtIGvRgv/jxUWir9/wQK..B9ATe/BNo4HZzqsuSEmtd0Jon/vBOCy",
+      "name": "andre",
+      "slug": "andre",
+      "id": 7,
+      "myFavoritePostIds": [
+        7
+      ]
+    },
+    {
+      "email": "fede@gmail.com",
+      "password": "$2a$10$xJCxrtLbQs560306vktC7OhflnkAbUA/4SPvlhQZMtOg/hWlQy2yC",
+      "name": "fede",
+      "slug": "fede",
+      "id": 8
     }
   ],
   "posts": [
@@ -326,6 +343,114 @@
       "autore": "Gianluca",
       "data": "10/4/2024",
       "id": 34
+    },
+    {
+      "testo": "hjhgjhj",
+      "userid": 7,
+      "autore": "andre",
+      "data": "10/4/2024",
+      "id": 35
+    },
+    {
+      "userid": 8,
+      "autore": "fede",
+      "data": "11/4/2024",
+      "id": 36
+    },
+    {
+      "testo": null,
+      "userid": 8,
+      "autore": "fede",
+      "data": "11/4/2024",
+      "id": 37
+    },
+    {
+      "testo": null,
+      "userid": 8,
+      "autore": "fede",
+      "data": "11/4/2024",
+      "id": 38
+    },
+    {
+      "testo": null,
+      "userid": 8,
+      "autore": "fede",
+      "data": "11/4/2024",
+      "id": 39
+    },
+    {
+      "testo": null,
+      "userid": 8,
+      "autore": "fede",
+      "data": "11/4/2024",
+      "id": 40
+    },
+    {
+      "userid": 8,
+      "autore": "fede",
+      "data": "11/4/2024",
+      "id": 41
+    },
+    {
+      "userid": 8,
+      "autore": "fede",
+      "data": "11/4/2024",
+      "id": 42
+    },
+    {
+      "testo": null,
+      "userid": 8,
+      "autore": "fede",
+      "data": "11/4/2024",
+      "id": 43
+    },
+    {
+      "testo": null,
+      "userid": 8,
+      "autore": "fede",
+      "data": "11/4/2024",
+      "id": 44
+    },
+    {
+      "userid": 8,
+      "autore": "fede",
+      "data": "11/4/2024",
+      "id": 45
+    },
+    {
+      "testo": null,
+      "userid": 8,
+      "autore": "fede",
+      "data": "11/4/2024",
+      "id": 46
+    },
+    {
+      "testo": null,
+      "userid": 8,
+      "autore": "fede",
+      "data": "11/4/2024",
+      "id": 47
+    },
+    {
+      "testo": null,
+      "userid": 8,
+      "autore": "fede",
+      "data": "11/4/2024",
+      "id": 48
+    },
+    {
+      "testo": "bdgvòbmvdkbmdfkpbmdfkmbdfkpbm",
+      "userid": 8,
+      "autore": "fede",
+      "data": "11/4/2024",
+      "id": 49
+    },
+    {
+      "testo": "bjvhnjhjhjhgjghj",
+      "userid": 8,
+      "autore": "fede",
+      "data": "11/4/2024",
+      "id": 50
     }
   ]
 }
