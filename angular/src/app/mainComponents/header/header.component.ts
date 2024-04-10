@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 
 @Component({
@@ -9,8 +9,9 @@ import { AuthService } from '../../auth/auth.service';
 export class HeaderComponent {
 
   show:boolean = false
-
+  
   isUserLoggedIn:boolean = false
+
 
   constructor(private authSvc:AuthService){}
 
@@ -19,8 +20,10 @@ export class HeaderComponent {
       this.isUserLoggedIn = data;
     })
   }
-
   logout():void{
     this.authSvc.logout()
   }
+
+  
 }
+

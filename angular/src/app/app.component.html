@@ -1,5 +1,17 @@
+<div [ngClass]="{'night-mode': isNightMode}">
 <app-header></app-header>
 
-<router-outlet></router-outlet>
+    <div class="toggle-switch mt-2 ms-2">
+    <label class="switch-label">
+        <input type="checkbox" class="checkbox">
+        <a (click)="toggleNightMode()" class="slider"></a>
+    </label>
+    </div>
+
+<router-outlet ></router-outlet>
 
 <app-footer></app-footer>
+</div>
+
+
+

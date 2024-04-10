@@ -1,0 +1,58 @@
+.night-mode {
+    background-image: url(../assets/img-white.jpg);
+    background-size: cover;
+    height: 100%;
+
+}
+
+.toggle-switch {
+    position: relative;
+    width: 80px;
+    height: 36.6px;
+    --light: #d8dbe0;
+    --dark: #28292c;
+  }
+  
+  .switch-label {
+    position: absolute;
+    width: 100%;
+    height: 35.6px;
+    background-color: var(--dark);
+    border-radius: 25px;
+    cursor: pointer;
+    border: 3px solid var(--dark);
+  }
+  
+  .checkbox {
+    display: none;
+  }
+  
+  .slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    transition: 0.7s;
+  }
+
+  .checkbox:checked ~ .slider {
+    background-color: var(--light);
+  }
+  
+  .slider::before {
+    content: "";
+    position: absolute;
+    top: 2.5px;
+    left: 1px;
+    width: 20px;
+    height: 25px;
+    border-radius: 50%;
+    box-shadow: inset 12px -4px 0px 0px var(--light);
+    transition: 0.7s;
+  }
+  
+  .checkbox:checked ~ .slider::before {
+    transform: translateX(50px);
+    background-color: gold;
+    box-shadow: none;
+  }
