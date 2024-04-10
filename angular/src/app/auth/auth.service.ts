@@ -43,7 +43,8 @@ export class AuthService {
 
 
     register(newUser:Partial<iUser>): Observable<accessData>{
-      return this.http.post<accessData>(this.registerUrl, newUser)
+      const newUserObj = {...newUser, slug: newUser.name}
+      return this.http.post<accessData>(this.registerUrl, newUserObj)
       .pipe(tap(data =>{
         this.authSubject.next(data.user)
         localStorage.setItem("accessData", JSON.stringify(data))

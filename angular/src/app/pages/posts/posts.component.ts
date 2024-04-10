@@ -41,6 +41,12 @@ export class PostsComponent {
       this.commentsArr = comments
     })
 
+    this.authsvc.$user.subscribe(data =>{
+      if (data) {
+        this.loggedUserName = data.name
+      }
+    })
+
   }
 
   logout() {
@@ -91,6 +97,12 @@ export class PostsComponent {
 
   toggleComments(index: number) {
     this.showComments[index] = !this.showComments[index];
+  }
+
+  loggedUserName:string = ""
+
+  deleteComment(id:number){
+    this.commentsSvc.deleteComment(id).subscribe()
   }
 
 

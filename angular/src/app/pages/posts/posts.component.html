@@ -191,12 +191,17 @@
       </div>
 
       <!-- INIZIO SEZIONE COMMENTI -->
-      <div *ngIf="showComments[i]" class="bg-dark">
+      <div *ngIf="showComments[i]">
         <form (ngSubmit)="submitComment(commentForm, post)" #commentForm="ngForm">
           <input type="text" name="testo" [(ngModel)]="comment.testo">
           <button class="btn btn-outline-info">PUBBLICA</button>
         </form>
-        <div *ngFor="let commento of commentiPostArr[post.id]">{{commento.testo}} </div>
+        <div *ngFor="let commento of commentiPostArr[post.id]">
+          {{commento.testo}}
+          <div *ngIf="loggedUserName === commento.autore">
+          <button (click)="deleteComment(commento.id)">ELIMINA</button>
+          </div>
+        </div>
       </div>
       <!-- FINE SEZIONE COMMENTI -->
     </div>

@@ -35,6 +35,14 @@
       "password": "$2a$10$CIUBWuPheI8WdAyDeCYhGesC13DFLEEWIzjBEuVQVCLK8TVOnQpha",
       "name": "Gianluca",
       "id": 5
+    },
+    {
+      "email": "luigi@gmail.com",
+      "password": "$2a$10$/2h/DwqYuoq8KOqdrdCEXuRws8IByRt7nJYpL3ZstdzFWV.RBci62",
+      "name": "luigi",
+      "slug": "luigi",
+      "id": 6,
+      "myFavoritePostIds": []
     }
   ],
   "posts": [
@@ -221,6 +229,96 @@
       "autore": "antonio",
       "data": "9/4/2024",
       "id": 20
+    },
+    {
+      "testo": "ciao",
+      "userid": 6,
+      "autore": "luigi",
+      "data": "10/4/2024",
+      "id": 21
+    },
+    {
+      "testo": "ciao",
+      "userid": 6,
+      "autore": "luigi",
+      "data": "10/4/2024",
+      "id": 22
+    },
+    {
+      "userid": 6,
+      "autore": "luigi",
+      "data": "10/4/2024",
+      "id": 23
+    },
+    {
+      "testo": "dd",
+      "userid": 6,
+      "autore": "luigi",
+      "data": "10/4/2024",
+      "id": 24
+    },
+    {
+      "testo": "df",
+      "userid": 6,
+      "autore": "luigi",
+      "data": "10/4/2024",
+      "id": 25
+    },
+    {
+      "testo": "xsa",
+      "userid": 6,
+      "autore": "luigi",
+      "data": "10/4/2024",
+      "id": 26
+    },
+    {
+      "testo": "d",
+      "userid": 6,
+      "autore": "luigi",
+      "data": "10/4/2024",
+      "id": 27
+    },
+    {
+      "testo": "sd",
+      "userid": 6,
+      "autore": "luigi",
+      "data": "10/4/2024",
+      "id": 28
+    },
+    {
+      "testo": "sdsd",
+      "userid": 6,
+      "autore": "luigi",
+      "data": "10/4/2024",
+      "id": 29
+    },
+    {
+      "testo": "ds",
+      "userid": 6,
+      "autore": "luigi",
+      "data": "10/4/2024",
+      "id": 30
+    },
+    {
+      "testo": "sdsd",
+      "userid": 6,
+      "autore": "luigi",
+      "data": "10/4/2024",
+      "id": 31
+    },
+    {
+      "testo": "sdsd",
+      "userid": 6,
+      "autore": "luigi",
+      "data": "10/4/2024",
+      "id": 32
+    },
+    {
+      "testo": "we",
+      "userid": 6,
+      "autore": "luigi",
+      "data": "10/4/2024",
+      "id": 33
     }
   ]
 }

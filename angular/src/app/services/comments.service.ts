@@ -23,7 +23,7 @@ export class CommentsService {
 
   $comments = this.commentsSubject.asObservable()
 
-  user!:iUser
+  user!: iUser
   constructor(private http: HttpClient,
     private authSvc: AuthService,
     private postSvc: PostService) {
@@ -32,37 +32,59 @@ export class CommentsService {
       this.commentsArr = comments
     })
 
-    this.authSvc.$user.subscribe(user =>{
-      if(user)
-      this.user = user
+    this.authSvc.$user.subscribe(user => {
+      if (user)
+        this.user = user
     })
 
   }
 
 
 
-  addComment(newComment: Partial<iComment>, post:iPost): Observable<iComment> {
+  deleteComment(id: number): Observable<iComment> {
+    return this.http.delete<iComment>(this.commentsUrl + `/${id}`)
+      .pipe(tap(() => {
+        this.commentsArr = this.commentsArr.filter(c => c.id != id)
+        this.commentsSubject.next(this.commentsArr)
+      }))
+
+    // .pipe(tap((comment) => {
+    //     this.commentsArr.push(comment)
+    //     this.commentsSubject.next(this.commentsArr)
+    //   }))
+  }
+  addComment(newComment: Partial<iComment>, post: iPost): Observable<iComment> {
     const today = new Date();
     const formattedDate = today.toLocaleDateString('it-IT');
-    return this.http.post<iComment>(this.commentsUrl, {...newComment, userid: this.user.id, autore: this.user.name, data: formattedDate})
-    .pipe(tap((data)=>{
-      console.log(data);
+    return this.http.post<iComment>(this.commentsUrl, { ...newComment, userid: this.user.id, autore: this.user.name, data: formattedDate })
+      .pipe(tap((data) => {
 
-       // Aggiungi l'ID del nuovo commento al post
-       post.commenti = [...post.commenti, data.id];
-       // Crea un nuovo array di post con il post modificato
-       const updatedPosts = this.postSvc.postArr.map(existingPost => existingPost.id === post.id ? post : existingPost);
-       // Assegna il nuovo array di post all'array di post del servizio
-       this.postSvc.postArr = updatedPosts;
-       // Emetti il nuovo array di post tramite il subject
-       this.postSvc.postSubject.next(updatedPosts);
+        // // Aggiungi l'ID del nuovo commento al post
+        // post.commenti = [...post.commenti, data.id];
+        // // Crea un nuovo array di post con il post modificato
+        // const index = this.postSvc.postArr.findIndex(p => p.id == post.id)
+        // const updatedpost = this.postSvc.postArr.splice(index, 1, post)
 
-    }))
+        // console.log(this.postSvc.postArr);
+        // return this.http.put<iPost>(this.postSvc.postUrl + `/${post.id}`, updatedpost)
+        //   .pipe(tap(post => {//ricevo lo user aggiornato
 
-      // .pipe(tap((comment) => {
-      //     this.commentsArr.push(comment)
-      //     this.commentsSubject.next(this.commentsArr)
-      //   }))
+        //     this.postSvc.postSubject.next(updatedArr);
+
+        //   }))
+        // console.log(data);
+
+
+
+
+        // Emetti il nuovo array di post tramite il subject
+
+      }))
+
+    // .pipe(tap((comment) => {
+    //     this.commentsArr.push(comment)
+    //     this.commentsSubject.next(this.commentsArr)
+    //   }))
   }
 
   // removePost(id: number): Observable<iPost> {
