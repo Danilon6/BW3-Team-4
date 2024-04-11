@@ -56,10 +56,11 @@
     },
     {
       "email": "fede@gmail.com",
-      "password": "$2a$10$xJCxrtLbQs560306vktC7OhflnkAbUA/4SPvlhQZMtOg/hWlQy2yC",
+      "password": "$2a$10$wLE72q1CUZMc3yofeuuKy.m8wfn4XshX30w0roeKpmXinBuy4wyJS",
       "name": "fede",
       "slug": "fede",
-      "id": 8
+      "id": 8,
+      "myFavoritePostIds": []
     }
   ],
   "posts": [
