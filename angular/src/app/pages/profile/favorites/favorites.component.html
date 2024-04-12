@@ -126,14 +126,14 @@
 
   <div *ngFor="let post of posts;let i = index" class="cardcentral mb-4">
     <div class="body">
-      <h2>{{users[post.authorId-1].name}}</h2>
-      <p>{{post.title}}</p>
-      <p class="text">
-        {{post.content}}
-      </p>
-      <p class="text">
-        {{post.category}}
-      </p>
+      <h2>{{users[post.authorId-1].name}} {{users[post.authorId -1].lastName}}</h2>
+          <h4 class="fw-bold">{{post.title}}</h4>
+          <p class="text">
+            CATEGORIA: <span class="fw-bold">{{post.category}}</span>
+          </p>
+          <p class="text">
+            {{post.content}}
+          </p>
       <div class="footer d-flex justify-content-between">
         <div>
           <div (click)="toggleComments(i)">

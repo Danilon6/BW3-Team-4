@@ -94,12 +94,12 @@
       <div *ngFor="let post of posts;let i = index" class="cardcentral mb-4">
         <div class="body">
           <h2>{{users[post.authorId-1].name}} {{users[post.authorId -1].lastName}}</h2>
-          <p>{{post.title}}</p>
+          <h4 class="fw-bold">{{post.title}}</h4>
           <p class="text">
-            {{post.content}}
+            CATEGORIA: <span class="fw-bold">{{post.category}}</span>
           </p>
           <p class="text">
-            {{post.category}}
+            {{post.content}}
           </p>
           <div class="footer">
             <div>

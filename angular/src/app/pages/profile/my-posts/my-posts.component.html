@@ -108,15 +108,15 @@
 
       <div *ngFor="let post of posts;let i = index" class="cardcentral mb-4">
         <div class="body">
-          <h2>{{users[post.authorId-1].name}}</h2>
-          <p>{{post.title}}</p>
+          <h2>{{users[post.authorId-1].name}} {{users[post.authorId -1].lastName}}</h2>
+          <h4 class="fw-bold">{{post.title}}</h4>
+          <p class="text">
+            CATEGORIA: <span class="fw-bold">{{post.category}}</span>
+          </p>
           <p class="text">
             {{post.content}}
           </p>
-          <p class="text">
-            {{post.category}}
-          </p>
-          <div class="footer d-flex justify-content-between">
+          <div class="footer d-flex justify-content-between align-items-baseline">
             <div>
               <div (click)="toggleComments(i)">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -214,7 +214,7 @@
           </div>
 
           <!-- INIZIO SEZIONE COMMENTI -->
-          <div *ngIf="showComments[i]" class="actionBox pt-4 ">
+          <div *ngIf="showComments[i]" class="actionBox pt-4">
             <div *ngFor="let commento of comments ">
               <div class="commentText d-flex gap-2">
                 <p class="fw-bold">{{users[commento.userId-1].name}}:</p>
