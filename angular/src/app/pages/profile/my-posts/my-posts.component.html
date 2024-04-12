@@ -1,18 +1,140 @@
+<div class="container2">
+<div class=" profile-page">
+  <div class="row">
+      <div class="col-xl-12 col-lg-7 col-md-12">
+          <div class="card profile-header">
+              <div class="body">
+                  <div class="row">
+                      <div class="col-lg-4 col-md-4 col-12">
+                          <div class="profile-image float-md-right"> <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt=""> </div>
+                      </div>
+                      <div class="col-lg-8 col-md-8 col-12">
+                          <h4 class="m-t-0 m-b-0"><strong>Michael</strong> Deo</h4>
+                          <span class="job_post">Ui UX Designer</span>
+                          <p>795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>
+                          <div>
+                              <button routerLink="/posts" class="btn btn-primary btn-round me-3">Bacheca</button>
+                              <button routerLink="/profile/favorites" class="btn btn-primary btn-round btn-simple">favoriti</button>
+                          </div>
+                          <p class="social-icon m-t-5 m-b-0">
+                              <a title="Twitter" href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
+                              <a title="Facebook" href="javascript:void(0);"><i class="fa fa-facebook"></i></a>
+                              <a title="Google-plus" href="javascript:void(0);"><i class="fa fa-twitter"></i></a>
+                              <a title="Behance" href="javascript:void(0);"><i class="fa fa-behance"></i></a>
+                              <a title="Instagram" href="javascript:void(0);"><i class="fa fa-instagram "></i></a>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 
-CIAO
 
-{{myPostArr | json}}
 
-<div class="text-white" *ngFor="let post of myPostArr">
-  <p>{{post.titolo}}</p>
-  <button (click)="elimina(post.id)">ELIMINA</button>
 
-<button class="btn btn-outline-warning" (click)="editShow = !editShow"></button>
 
-  <form >
+<div  class="cardcentral mb-4">
+  <div class="body">
+    <h2></h2>
+    <p></p>
+    <p class="text">
 
-    <input type="text" name="titolo" [(ngModel)]="post.titolo">
+    </p>
+    <p class="text">
 
-    <button (click)="edit(post)">MODIFICA</button>
-  </form>
+    </p>
+    <div class="footer">
+      <div>
+        <div>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M16 10H16.01M12 10H12.01M8 10H8.01M3 10C3 4.64706 5.11765 3 12 3C18.8824 3 21 4.64706 21 10C21 15.3529 18.8824 17 12 17C11.6592 17 11.3301 16.996 11.0124 16.9876L7 21V16.4939C4.0328 15.6692 3 13.7383 3 10Z"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </g></svg>0
+        </div>
+
+
+
+        <label class="ui-bookmark pt-2">
+          <input type="checkbox" />
+          <div  class="bookmark">
+            <svg viewBox="0 0 32 32">
+              <g>
+                <path
+                  d="M27 4v27a1 1 0 0 1-1.625.781L16 24.281l-9.375 7.5A1 1 0 0 1 5 31V4a4 4 0 0 1 4-4h14a4 4 0 0 1 4 4z"
+                ></path>
+              </g>
+            </svg>
+          </div>
+        </label>
+
+        <div  title="Like" class="heart-container">
+          <input id="Give-It-An-Id" class="checkbox" type="checkbox" />
+          <div class="svg-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="svg-outline"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="svg-filled"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="100"
+              width="100"
+              class="svg-celebrate"
+            >
+            </svg>
+          </div>
+        </div>
+        <div class="text-dark"></div>
+        <button class="btn btn-warning">Modifica</button>
+        <button class="btn btn-danger">elimina
+      </button>
+      </div>
+    </div>
+
+    <!-- INIZIO SEZIONE COMMENTI -->
+    <div  class="actionBox pt-4">
+      <div>
+        <div class="commentText">
+          <p class=""></p> <span class="date sub-text">on March 5th, 2014</span>
+        </div>
+      </div>
+      <form class="d-flex align-items-center" role="form" #commentForm="ngForm">
+        <div class="form-group">
+          <textarea class="rounded" type="text" name="testo"  placeholder="cosa ne pensi?"></textarea>
+          <!-- [(ngModel)]="comment.testo" -->
+        </div>
+
+        <div class="form-group ms-3">
+          <button class="btn btn-dark">Add</button>
+        </div>
+      </form>
+    </div>
 </div>

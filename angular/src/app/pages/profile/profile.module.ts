@@ -8,11 +8,15 @@ import { MyPostsComponent } from './my-posts/my-posts.component';
 import { FormsModule } from '@angular/forms';
 
 
+
+
 @NgModule({
   declarations: [
     DetailsComponent,
     FavoritesComponent,
-    MyPostsComponent
+    MyPostsComponent,
+
+
   ],
   imports: [
     CommonModule,

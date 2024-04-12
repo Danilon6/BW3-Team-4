@@ -61,6 +61,13 @@
       "slug": "fede",
       "id": 8,
       "myFavoritePostIds": []
+    },
+    {
+      "email": "and@and.it",
+      "password": "$2a$10$.uZVjHAJb9Pux6BBLbPzEeKuXXFrdTe2zDnhl7/zksalDOWqFsgN.",
+      "name": "and",
+      "slug": "and",
+      "id": 9
     }
   ],
   "posts": [
