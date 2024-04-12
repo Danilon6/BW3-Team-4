@@ -90,7 +90,9 @@ export class PostsComponent {
     } else {
       this.user.favourites.push(post.id);
       post.likes++;
+
     }
+
     this.postSvc.update(post).subscribe();
     this.userSvc.update(this.user).subscribe();
   }
@@ -100,13 +102,11 @@ export class PostsComponent {
   }
 
   addComment(post: IPost) {
-    const newDate = new Date()
     if (this.user && post) {
       const commentToAdd: Partial<IComment> = {
         ...this.newComments[post.id],
         userId: this.user.id,
         postId: post.id,
-        date: newDate.getTime()
       };
       this.commentSvc.create(commentToAdd).subscribe(() => {
         this.newComments[post.id] = {};

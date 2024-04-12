@@ -196,8 +196,9 @@
       <!-- INIZIO SEZIONE COMMENTI -->
       <div *ngIf="showComments[i]" class="actionBox pt-4 ">
         <div *ngFor="let commento of comments ">
-          <div class="commentText">
-            <p class="">{{commento.content}}</p> <span class="date sub-text">{{commento.date}}</span>
+          <div class="commentText d-flex gap-2">
+            <p class="fw-bold">{{users[commento.userId-1].name}}:</p>
+            <p class="">{{commento.content}}</p>
           </div>
         </div>
         <form class="d-flex align-items-center" role="form">
