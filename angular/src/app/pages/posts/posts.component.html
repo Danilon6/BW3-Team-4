@@ -63,7 +63,18 @@
                   <option> Wichele Tedesco</option>
 
                 </select>
-                <textarea placeholder="A cosa stai pensando?"></textarea>
+                <textarea
+                  type="text"
+                  name="contenuto"
+                  [(ngModel)]="newPost.content"
+                  class="form-control"
+                  placeholder="Inserisci il contenuto"
+                  required
+                  #contenuto="ngModel"
+                ></textarea>
+      <div *ngIf="contenuto.invalid && contenuto.dirty" class="alert alert-danger">
+        You must enter a title
+      </div>
 
                 <button (click)="addPost()" >Pubblica</button>
               </form>
