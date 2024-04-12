@@ -15,7 +15,7 @@ export class FavoritesComponent {
   favoritePostArr:iPost[] = []
 
 
-  constructor(private postSvc:PostService){}
+  constructor(private postSvc:PostService, private authsvc:AuthService){}
 
 ngOnInit(){
   this.postSvc.$favoritePost.subscribe(favoritePostArr =>{
@@ -23,4 +23,9 @@ ngOnInit(){
 })
 }
 
+
+
+logout() {
+  this.authsvc.logout()
+}
 }

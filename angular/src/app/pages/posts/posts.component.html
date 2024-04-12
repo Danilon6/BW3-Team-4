@@ -17,14 +17,15 @@
 
   <div class="Search">
     <div class="SearchInner">
-    <label>Fai una ricerca dei Post</label>
+    <h2>Fai una ricerca per categoria</h2>
 
-    <div class="container align-items-center">
-      <button class="btn btn-primary me-4">Sport</button>
-      <button class="btn btn-primary me-4">Politica</button>
-      <button class="btn btn-primary me-4">Salute</button>
-      <button class="btn btn-primary me-4">Cibo</button>
-      <button class="btn btn-primary me-4">Ambiente</button>
+    <div class="container align-items-center ">
+
+      <button class="btn lable button me-4">Sport</button>
+      <button class="btn lable button me-4">Politica</button>
+      <button class="btn lable button me-4">Salute</button>
+      <button class="btn lable button me-4">Cibo</button>
+      <button class="btn lable button me-4">Ambiente</button>
       <button onclick="window.dialog.showModal();" class="button ms-3 ">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill " viewBox="0 0 16 16">
           <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z"/>
@@ -38,7 +39,16 @@
     <form class="form">
       <div class="title">Scrivi il tuo Post </div>
       <input type="text" placeholder="titolo">
-      <select type="text"></select>
+      <select class="form" type="text">
+        <option>-------------</option>
+        <option> Sport</option>
+        <option> Politica</option>
+        <option> Salute</option>
+        <option> Cibo</option>
+        <option> Ambiente</option>
+        <option> Wichele Tedesco</option>
+
+      </select>
       <textarea placeholder="A cosa stai pensando?"></textarea>
 
       <button>Pubblica</button>
@@ -86,12 +96,12 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 ></path>
-              </g></svg>0
+              </g></svg>
           </div>
 
 
 
-          <label class="ui-bookmark pt-2">
+          <label class="ui-bookmark pt-3">
             <input type="checkbox" />
             <div (click)="favorite(post.id)" class="bookmark">
               <svg viewBox="0 0 32 32">
@@ -125,21 +135,16 @@
                   d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
                 ></path>
               </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="100"
-                width="100"
-                class="svg-celebrate"
-              >
-              </svg>
+
             </div>
+            <div class="text-dark px-2 ">{{post.likes}}</div>
           </div>
-          <div class="text-dark">{{post.likes}}</div>
+
         </div>
       </div>
 
       <!-- INIZIO SEZIONE COMMENTI -->
-      <div *ngIf="showComments[i]" class="actionBox pt-4">
+      <div *ngIf="showComments[i]" class="actionBox pt-4 ">
         <div *ngFor="let commento of commentiPostArr[post.id] ">
           <div class="commentText">
             <p class="">{{commento.testo}}</p> <span class="date sub-text">on March 5th, 2014</span>
@@ -151,7 +156,7 @@
           </div>
 
           <div class="form-group ms-3">
-            <button class="btn btn-dark">Add</button>
+            <button class="lable button">Invio </button>
           </div>
         </form>
       </div>

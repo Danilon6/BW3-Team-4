@@ -64,10 +64,26 @@
     },
     {
       "email": "and@and.it",
-      "password": "$2a$10$.uZVjHAJb9Pux6BBLbPzEeKuXXFrdTe2zDnhl7/zksalDOWqFsgN.",
+      "password": "$2a$10$20EwEVMhGOULlvQPx.kQ6ew45E439dUngVsUsw63JKN3Ijt7v/IIO",
       "name": "and",
       "slug": "and",
-      "id": 9
+      "id": 9,
+      "myFavoritePostIds": []
+    },
+    {
+      "email": "pippo@baudo",
+      "password": "$2a$10$Yr7KUrlXxVc4FeRVdJR4XOuM0J2G1bBtRjzdt1C1v6jnK/.3nJIPq",
+      "name": "pippo",
+      "slug": "pippo",
+      "id": 10,
+      "myFavoritePostIds": []
+    },
+    {
+      "email": "lelly@kelly.it",
+      "password": "$2a$10$0GvW0HShI/Kx6kP4ccWig.TyaiXpRKLcP37A0jdHck4I2NvkQGm0y",
+      "name": "lelly",
+      "slug": "lelly",
+      "id": 11
     }
   ],
   "posts": [

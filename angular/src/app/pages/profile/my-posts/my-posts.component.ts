@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { iPost } from '../../../models/i-post';
 import { PostService } from '../../../services/post.service';
+import { AuthService } from '../../../auth/auth.service';
 
 @Component({
   selector: 'app-my-posts',
@@ -12,7 +13,7 @@ export class MyPostsComponent {
   myPostArr:iPost[] = []
 
 
-  constructor(private postSvc:PostService){}
+  constructor(private postSvc:PostService, private authsvc:AuthService){}
 
 ngOnInit(){
   this.postSvc.$myPost.subscribe(myPostArr =>{
@@ -21,6 +22,9 @@ ngOnInit(){
 }
 
 
+logout() {
+  this.authsvc.logout()
+}
 
 elimina(id:number){
   this.postSvc.removePost(id).subscribe()
