@@ -13,6 +13,14 @@
     <div class="user-box">
       <input
       required=""
+      name="nome"
+      [(ngModel)]="newUser.lastName"
+      type="text" >
+      <label class="text-secondary">Inserisci cognome</label>
+    </div>
+    <div class="user-box">
+      <input
+      required=""
       name="email"
       [(ngModel)]="newUser.email"
       type="email">

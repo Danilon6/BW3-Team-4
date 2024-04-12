@@ -4,32 +4,20 @@
       "email": "antonio@email.it",
       "password": "$2a$10$DKRbKjF5C8m0KdhHISkcs.Pvz//LenQKgKAM6HzR8sJMG0AI7YXVS",
       "name": "antonio",
+      "lastName": "schipani",
       "favourites": [
         2,
         1,
-        7,
         10,
         11
       ],
       "id": 1
     },
     {
-      "email": "beatrice@email.it",
-      "password": "$2a$10$OCEq3RiDlFOp5Sw2CBkd9eP4fdfwSKk5vBrp4I97hxVXHyM2.SA3e",
-      "name": "beatrice",
-      "favourites": [
-        2,
-        1,
-        5,
-        6,
-        3
-      ],
-      "id": 2
-    },
-    {
       "email": "danilo@email.it",
       "password": "$2a$10$F58W4qTK6ke5QYKMzQKQWuSz6AXssP1.lra8xCQ6p3fMMh2eO214K",
       "name": "danilo",
+      "lastName": "nebulosi",
       "favourites": [
         3,
         5,
@@ -40,82 +28,5 @@
     }
   ],
   "posts": [
-    {
-      "title": "Ratione id omnis inv",
-      "content": "Obcaecati ut amet v",
-      "category": "sport",
-      "authorId": 2,
-      "likes": 2,
-      "id": 7
-    },
-    {
-      "title": "Porro deserunt dolor",
-      "content": "Nesciunt cum ipsam ",
-      "category": "sport",
-      "authorId": 3,
-      "likes": 1,
-      "id": 10
-    },
-    {
-      "title": "sdasadsdadassaddsaads",
-      "category": "politica",
-      "content": "saddsasda",
-      "authorId": 1,
-      "likes": 1,
-      "id": 11
-    }
-  ],
-  "comments": [
-    {
-      "content": "swdeasdasd",
-      "userId": 3,
-      "postId": 10,
-      "id": 2
-    },
-    {
-      "content": "aa",
-      "userId": 1,
-      "postId": 11,
-      "id": 3
-    },
-    {
-      "content": "a",
-      "userId": 1,
-      "postId": 11,
-      "id": 4
-    },
-    {
-      "content": "a",
-      "userId": 1,
-      "postId": 11,
-      "id": 5
-    },
-    {
-      "content": "aa",
-      "userId": 1,
-      "postId": 11,
-      "id": 6
-    },
-    {
-      "content": "dassa",
-      "userId": 1,
-      "postId": 7,
-      "date": 1712919561360,
-      "id": 7
-    },
-    {
-      "content": "dssa",
-      "userId": 1,
-      "postId": 7,
-      "date": 1712919567959,
-      "id": 8
-    },
-    {
-      "content": "dsaa",
-      "userId": 1,
-      "postId": 7,
-      "date": 1712919569713,
-      "id": 9
-    }
   ]
 }
