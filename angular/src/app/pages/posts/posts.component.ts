@@ -6,6 +6,7 @@ import { PostService } from '../../services/post.service';
 import { CommentsService } from '../../services/comments.service';
 import { UserService } from '../../services/user.service';
 import { IUser } from '../../models/i-user';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -62,7 +63,7 @@ export class PostsComponent {
     this.postSvc.delete(id).subscribe();
   }
 
-  addPost() {
+  addPost(form:NgForm) {
     if (this.user) {
       const postToAdd: Partial<IPost> = {
         ...this.newPost,
@@ -71,6 +72,7 @@ export class PostsComponent {
       };
       this.postSvc.create(postToAdd).subscribe(() => {
         this.newPost = {};
+        form.reset()
       });
     }
   }

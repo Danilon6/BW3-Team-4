@@ -5,7 +5,8 @@
       "password": "$2a$10$DKRbKjF5C8m0KdhHISkcs.Pvz//LenQKgKAM6HzR8sJMG0AI7YXVS",
       "name": "antonio",
       "favourites": [
-        2
+        2,
+        1
       ],
       "id": 1
     },
@@ -41,7 +42,7 @@
       "content": "Quos in labore reici",
       "category": "salute",
       "authorId": 1,
-      "likes": 1,
+      "likes": 2,
       "id": 1
     },
     {
@@ -126,6 +127,22 @@
       "authorId": 1,
       "likes": 0,
       "id": 15
+    },
+    {
+      "title": "sads",
+      "category": "sport",
+      "content": "dsasd",
+      "authorId": 1,
+      "likes": 0,
+      "id": 16
+    },
+    {
+      "title": "dsa",
+      "category": "economia",
+      "content": "sda",
+      "authorId": 1,
+      "likes": 0,
+      "id": 17
     }
   ],
   "comments": [

@@ -38,7 +38,7 @@
             <dialog id="dialog">
 
 
-              <form class="form">
+              <form #form="ngForm" class="form">
                 <div class="title">Scrivi il tuo Post </div>
                 <input
                   type="text"
@@ -77,10 +77,10 @@
         You must enter content
       </div>
 
-                <button [disabled]="contenuto.invalid || categoria.invalid || titolo.invalid" (click)="addPost()" onclick="window.dialog.close();" >Pubblica</button>
+                <button [disabled]="contenuto.invalid || categoria.invalid || titolo.invalid" (click)="addPost(form)" onclick="window.dialog.close();" >Pubblica</button>
               </form>
 
-              <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+              <button onclick="window.dialog.close();" (click)="form.reset()" aria-label="close" class="x">❌</button>
             </dialog>
 
 
