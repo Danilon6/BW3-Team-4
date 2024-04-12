@@ -6,10 +6,11 @@
       "name": "antonio",
       "lastName": "schipani",
       "favourites": [
+        10,
+        11,
         2,
         1,
-        10,
-        11
+        3
       ],
       "id": 1
     },
@@ -28,5 +29,29 @@
     }
   ],
   "posts": [
+    {
+      "title": "i tuoi preferiti",
+      "category": "economia",
+      "content": "viva la fica",
+      "authorId": 1,
+      "likes": 13,
+      "id": 1
+    },
+    {
+      "title": "ciao ",
+      "category": "sport",
+      "content": "forza roma",
+      "authorId": 1,
+      "likes": 16,
+      "id": 2
+    },
+    {
+      "title": "forza roma",
+      "category": "sport",
+      "content": "la roma è la migliore milan brutto",
+      "authorId": 1,
+      "likes": 1,
+      "id": 3
+    }
   ]
 }
