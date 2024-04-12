@@ -96,6 +96,36 @@
       "authorId": 1,
       "likes": 0,
       "id": 11
+    },
+    {
+      "title": "",
+      "category": "sport",
+      "content": "",
+      "authorId": 1,
+      "likes": 0,
+      "id": 12
+    },
+    {
+      "title": "sadsad",
+      "authorId": 1,
+      "likes": 0,
+      "id": 13
+    },
+    {
+      "title": "dsasadsa",
+      "category": "politica",
+      "content": "addads",
+      "authorId": 1,
+      "likes": 0,
+      "id": 14
+    },
+    {
+      "title": "asdsa",
+      "category": "economia",
+      "content": "asdsa",
+      "authorId": 1,
+      "likes": 0,
+      "id": 15
     }
   ],
   "comments": [

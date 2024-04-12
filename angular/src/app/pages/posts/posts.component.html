@@ -53,16 +53,17 @@
       <div *ngIf="titolo.invalid && titolo.dirty" class="alert alert-danger">
         You must enter a title
       </div>
-                <select class="form" type="text">
-                  <option>Seleziona una categoria</option>
-                  <option> Sport</option>
-                  <option> Politica</option>
-                  <option> Salute</option>
-                  <option> Cibo</option>
-                  <option> Ambiente</option>
-                  <option> Wichele Tedesco</option>
-
-                </select>
+      <select name="categoria" [(ngModel)]="newPost.category" class="form-control" #categoria="ngModel" required>
+        <option value="" disabled selected>Scegli una categoria</option>
+        <option value="sport">Sport</option>
+        <option value="economia">Economia</option>
+        <option value="politica">Politica</option>
+        <option value="salute">Salute</option>
+        <option value="epicode">Epicode</option>
+      </select>
+      <div *ngIf="categoria.invalid && categoria.dirty" class="alert alert-danger">
+        You must enter a category
+      </div>
                 <textarea
                   type="text"
                   name="contenuto"
@@ -73,10 +74,10 @@
                   #contenuto="ngModel"
                 ></textarea>
       <div *ngIf="contenuto.invalid && contenuto.dirty" class="alert alert-danger">
-        You must enter a title
+        You must enter content
       </div>
 
-                <button (click)="addPost()" >Pubblica</button>
+                <button [disabled]="contenuto.invalid || categoria.invalid || titolo.invalid" (click)="addPost()" onclick="window.dialog.close();" >Pubblica</button>
               </form>
 
               <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
