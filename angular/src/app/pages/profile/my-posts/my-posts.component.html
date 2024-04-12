@@ -267,7 +267,24 @@
         </div>
       </form>
     </div>
-</div>
+    <!-- <div *ngIf="showComments[i]" class="actionBox pt-4 ">
+      <div *ngFor="let commento of commentiPostArr[post.id] ">
+        <div class="commentText">
+          <p class="">{{commento.testo}}</p> <span class="date sub-text">on March 5th, 2014</span>
+        </div>
+      </div>
+      <form class="d-flex align-items-center" role="form" (ngSubmit)="submitComment(commentForm, post)" #commentForm="ngForm">
+        <div class="form-group">
+          <textarea class="rounded" type="text" name="testo" [(ngModel)]="comment.testo" placeholder="cosa ne pensi?"></textarea>
+        </div>
+
+        <div class="form-group ms-3">
+          <button class="lable button">Invio </button>
+        </div>
+      </form>
+    </div>-->
+
+  </div>
 
 
 </div>
