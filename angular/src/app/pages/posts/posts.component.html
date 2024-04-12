@@ -40,7 +40,19 @@
 
               <form class="form">
                 <div class="title">Scrivi il tuo Post </div>
-                <input type="text" placeholder="titolo">
+                <input
+                  type="text"
+                  name="titolo"
+                  [(ngModel)]="newPost.title"
+                  class="form-control"
+                  placeholder="Inserisci il titolo"
+                  id="exampleInputText"
+                  required
+                  #titolo="ngModel"
+                />
+      <div *ngIf="titolo.invalid && titolo.dirty" class="alert alert-danger">
+        You must enter a title
+      </div>
                 <select class="form" type="text">
                   <option>Seleziona una categoria</option>
                   <option> Sport</option>
