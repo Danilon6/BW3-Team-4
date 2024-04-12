@@ -162,25 +162,51 @@
               </button>
 
               <dialog id="dialog">
-                <form class="form">
-                  <div class="title">Modifica il Post</div>
-                  <input type="text" placeholder="titolo">
-                  <select class="form" type="text">
-                    <option>-------------</option>
-                    <option> Sport</option>
-                    <option> Politica</option>
-                    <option> Salute</option>
-                    <option> Cibo</option>
-                    <option> Ambiente</option>
-                    <option> Wichele Tedesco</option>
-                  </select>
-                  <textarea placeholder="A cosa stai pensando?"></textarea>
-                  <button>Pubblica</button>
+                <form #form="ngForm" class="form">
+                  <div class="title">Scrivi il tuo Post </div>
+                  <input
+                    type="text"
+                    name="titolo"
+                    [(ngModel)]="post.title"
+                    class="form-control"
+                    placeholder="Inserisci il titolo"
+                    id="exampleInputText"
+                    required
+                    #titolo="ngModel"
+                  />
+        <div *ngIf="titolo.invalid && titolo.dirty" class="alert alert-danger">
+          You must enter a title
+        </div>
+        <select name="categoria" [(ngModel)]="post.category" class="form-control" #categoria="ngModel" required>
+          <option value="" disabled selected>Scegli una categoria</option>
+          <option value="sport">Sport</option>
+          <option value="economia">Economia</option>
+          <option value="politica">Politica</option>
+          <option value="salute">Salute</option>
+          <option value="epicode">Epicode</option>
+        </select>
+        <div *ngIf="categoria.invalid && categoria.dirty" class="alert alert-danger">
+          You must enter a category
+        </div>
+                  <textarea
+                    type="text"
+                    name="contenuto"
+                    [(ngModel)]="post.content"
+                    class="form-control"
+                    placeholder="Inserisci il contenuto"
+                    required
+                    #contenuto="ngModel"
+                  ></textarea>
+        <div *ngIf="contenuto.invalid && contenuto.dirty" class="alert alert-danger">
+          You must enter content
+        </div>
+
+                  <button [disabled]="contenuto.invalid || categoria.invalid || titolo.invalid" (click)="updatePost(post)" onclick="window.dialog.close();" >MODIFICA</button>
                 </form>
-                <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+                <button onclick="window.dialog.close();"aria-label="close" class="x">❌</button>
               </dialog>
 
-              <button class="btn btn-danger">
+              <button (click)="deletePost(post.id)" class="btn btn-danger">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-trash-fill" viewBox="0 0 16 16">
                   <path

@@ -141,12 +141,6 @@
 
           <!-- INIZIO SEZIONE COMMENTI -->
           <div *ngIf="showComments[i]" class="actionBox pt-4 ">
-            <div *ngFor="let commento of comments ">
-              <div class="commentText">
-                <p class="fw-bold">{{users[commento.userId-1].name}}</p>
-                <p class="">{{commento.content}}</p> <span class="date sub-text">{{commento.date}}</span>
-              </div>
-            </div>
             <form class="d-flex align-items-center" role="form">
               <div class="form-group">
                 <textarea class="rounded" type="text" name="testo" [(ngModel)]="newComments[post.id].content"
@@ -157,6 +151,13 @@
                 <button (click)="addComment(post)" class="lable button">Invio </button>
               </div>
             </form>
+            <div *ngFor="let commento of comments ">
+              <div class="commentText d-flex gap-2">
+                <p class="fw-bold">{{users[commento.userId-1].name}}:</p>
+                <p class="">{{commento.content}}</p> <span class="date sub-text">{{commento.date}}</span>
+              </div>
+            </div>
+
           </div>
           <!-- FINE SEZIONE COMMENTI -->
         </div>

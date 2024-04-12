@@ -36,6 +36,9 @@ export class MyPostsComponent {
     this.postSvc.$post.subscribe((posts) => {
       this.posts = posts;
       this.posts = this.filterMyPost(this.posts, this.user!);
+      this.posts.forEach((post) => {
+        this.newComments[post.id] = {};
+      });
     });
 
     this.commentSvc.$comment.subscribe((comments) => {
@@ -46,6 +49,11 @@ export class MyPostsComponent {
       this.users = users;
     });
   }
+
+  updatePost(post:IPost){
+    this.postSvc.update(post).subscribe()
+  }
+
   deletePost(id: number) {
     this.postSvc.delete(id).subscribe();
   }

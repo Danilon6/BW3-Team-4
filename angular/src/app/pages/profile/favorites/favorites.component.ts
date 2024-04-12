@@ -37,6 +37,9 @@ export class FavoritesComponent {
     this.postSvc.$post.subscribe((posts) => {
       this.posts = posts;
       this.posts = this.filterPostsByFavourites(this.posts, this.user!);
+      this.posts.forEach((post) => {
+        this.newComments[post.id] = {};
+      });
     });
 
     this.commentSvc.$comment.subscribe((comments) => {

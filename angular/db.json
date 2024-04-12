@@ -6,7 +6,10 @@
       "name": "antonio",
       "favourites": [
         2,
-        1
+        1,
+        7,
+        10,
+        11
       ],
       "id": 1
     },
@@ -38,120 +41,31 @@
   ],
   "posts": [
     {
-      "title": "Adipisicing voluptas",
-      "content": "Quos in labore reici",
-      "category": "salute",
-      "authorId": 1,
-      "likes": 2,
-      "id": 1
-    },
-    {
-      "title": "Commodi ab ut ea mol",
-      "content": "Et dolore aute irure",
-      "category": "economia",
-      "authorId": 1,
-      "likes": 1,
-      "id": 3
-    },
-    {
-      "title": "Deserunt nisi ipsum",
-      "content": "Eius aliqua Non vol",
-      "category": "sport",
-      "authorId": 1,
-      "likes": 2,
-      "id": 5
-    },
-    {
-      "title": "Architecto doloremqu",
-      "content": "Sunt consectetur eum",
-      "category": "politica",
-      "authorId": 1,
-      "likes": 1,
-      "id": 6
-    },
-    {
       "title": "Ratione id omnis inv",
       "content": "Obcaecati ut amet v",
       "category": "sport",
       "authorId": 2,
-      "likes": 1,
+      "likes": 2,
       "id": 7
-    },
-    {
-      "title": "Quia in duis non dol",
-      "content": "Dolore a laboriosam",
-      "category": "economia",
-      "authorId": 1,
-      "likes": 1,
-      "id": 8
     },
     {
       "title": "Porro deserunt dolor",
       "content": "Nesciunt cum ipsam ",
       "category": "sport",
       "authorId": 3,
-      "likes": 0,
+      "likes": 1,
       "id": 10
     },
     {
-      "authorId": 1,
-      "likes": 0,
-      "id": 11
-    },
-    {
-      "title": "",
-      "category": "sport",
-      "content": "",
-      "authorId": 1,
-      "likes": 0,
-      "id": 12
-    },
-    {
-      "title": "sadsad",
-      "authorId": 1,
-      "likes": 0,
-      "id": 13
-    },
-    {
-      "title": "dsasadsa",
+      "title": "sdasadsdadassaddsaads",
       "category": "politica",
-      "content": "addads",
+      "content": "saddsasda",
       "authorId": 1,
-      "likes": 0,
-      "id": 14
-    },
-    {
-      "title": "asdsa",
-      "category": "economia",
-      "content": "asdsa",
-      "authorId": 1,
-      "likes": 0,
-      "id": 15
-    },
-    {
-      "title": "sads",
-      "category": "sport",
-      "content": "dsasd",
-      "authorId": 1,
-      "likes": 0,
-      "id": 16
-    },
-    {
-      "title": "dsa",
-      "category": "economia",
-      "content": "sda",
-      "authorId": 1,
-      "likes": 0,
-      "id": 17
+      "likes": 1,
+      "id": 11
     }
   ],
   "comments": [
-    {
-      "content": "adsasdasd",
-      "userId": 1,
-      "postId": 5,
-      "id": 1
-    },
     {
       "content": "swdeasdasd",
       "userId": 3,
@@ -159,50 +73,49 @@
       "id": 2
     },
     {
-      "content": "ukhukuh",
+      "content": "aa",
       "userId": 1,
-      "postId": 1,
-      "date": 1712916203697,
+      "postId": 11,
       "id": 3
     },
     {
-      "content": "iuih",
+      "content": "a",
       "userId": 1,
-      "postId": 1,
-      "date": 1712916207860,
+      "postId": 11,
       "id": 4
     },
     {
-      "content": "dsasa",
+      "content": "a",
       "userId": 1,
-      "postId": 1,
-      "date": 1712916371604,
+      "postId": 11,
       "id": 5
     },
     {
+      "content": "aa",
       "userId": 1,
-      "postId": 1,
+      "postId": 11,
       "id": 6
     },
     {
+      "content": "dassa",
       "userId": 1,
-      "postId": 3,
+      "postId": 7,
+      "date": 1712919561360,
       "id": 7
     },
     {
+      "content": "dssa",
       "userId": 1,
-      "postId": 5,
+      "postId": 7,
+      "date": 1712919567959,
       "id": 8
     },
     {
+      "content": "dsaa",
       "userId": 1,
-      "postId": 6,
+      "postId": 7,
+      "date": 1712919569713,
       "id": 9
-    },
-    {
-      "userId": 1,
-      "postId": 1,
-      "id": 10
     }
   ]
 }
