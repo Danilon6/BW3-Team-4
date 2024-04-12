@@ -1,11 +1,8 @@
-export interface iPost {
-  id: number
-  userId:number
-  titolo: string
-  autore: string
-  contenuto: string
-  data_pubblicazione: string
-  categoria: string
-  likes: number
-  commenti: number[]
+export interface IPost {
+  id: number;
+  title: string;
+  content: string;
+  authorId: number;
+  category: string;
+  likes: number;
 }

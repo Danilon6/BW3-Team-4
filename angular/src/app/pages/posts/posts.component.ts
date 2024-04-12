@@ -1,10 +1,11 @@
-import { iComment } from './../../models/i-comment';
+import { IComment } from './../../models/i-comment';
 import { Component } from '@angular/core';
-import { iPost } from '../../models/i-post';
+import { IPost } from '../../models/i-post';
 import { AuthService } from '../../auth/auth.service';
 import { PostService } from '../../services/post.service';
-import { NgForm } from '@angular/forms';
 import { CommentsService } from '../../services/comments.service';
+import { UserService } from '../../services/user.service';
+import { IUser } from '../../models/i-user';
 
 
 @Component({
@@ -14,94 +15,115 @@ import { CommentsService } from '../../services/comments.service';
 })
 export class PostsComponent {
 
-  comment:Partial<iComment> = {}
+  posts: IPost[] = [];
+  comments: IComment[] = [];
+  users: IUser[] = [];
 
-  constructor(private authsvc: AuthService,
-    private postSvc: PostService,
-    private commentsSvc:CommentsService
-  ) {
-  }
-  newPost: Partial<iPost> = {
-  }
-  postArr: iPost[] = []
+  user: IUser | undefined;
 
-  commentsArr: iComment[] = []
+  newPost: Partial<IPost> = {};
+  newComment: Partial<IComment> = {};
 
-  show:boolean = false
-
-
-  commentiPostArr: { [postId: number]: iComment[] } = {};
-
-  ngOnInit() {
-    this.postSvc.$post.subscribe(posts => {
-      this.postArr = posts
-    })
-
-    this.commentsSvc.$comments.subscribe(comments => {
-      this.commentsArr = comments
-    })
-
-    this.authsvc.$user.subscribe(data =>{
-      if (data) {
-        this.loggedUserName = data.name
-      }
-    })
-
-  }
-
- 
-
-  submitForm(newPost: NgForm) {
-    this.postSvc.addPost(this.newPost).subscribe()
-  }
-  submitComment(newComment: NgForm, post:iPost) {
-    this.commentsSvc.addComment(this.comment, post).subscribe(() => {
-      newComment.reset()
-    })
-  }
-
-  likedCliked: boolean = false
-
-  like(post: iPost) {
-    if (!this.likedCliked) {
-      this.postSvc.addLike(post)
-      this.likedCliked = true
-    } else {
-      this.postSvc.removeLike(post)
-      this.likedCliked = false
-    }
-  }
-
-  favorite(id:number){
-    if (!this.likedCliked) {
-      this.postSvc.addToFavorite(id).subscribe()
-      this.likedCliked = true
-    } else {
-      this.postSvc.removeFavorite(id).subscribe()
-      this.likedCliked = false
-    }
-  }
-
-  getcomment(post:iPost){
-    if (!post.commenti){
-      this.commentiPostArr[post.id] = []
-      return
-    }
-      const commenti = this.postSvc.filterComment(this.commentsArr, post.commenti)
-      this.commentiPostArr[post.id] = commenti
-  }
+  commentiPostArr: { [postId: number]: IComment[] } = {};
+  newComments: { [postId: number]: Partial<IComment> } = {};
 
   showComments: boolean[] = [];
+
+  constructor(
+    private postSvc: PostService,
+    private authSvc: AuthService,
+    private commentSvc: CommentsService,
+    private userSvc: UserService
+  ) {}
+
+  ngOnInit() {
+    this.authSvc.user$.subscribe((user) => {
+      this.user = user || undefined;
+    });
+
+    this.userSvc.users$.subscribe((users) => {
+      this.users = users;
+    });
+
+    this.postSvc.$post.subscribe((posts) => {
+      this.posts = posts;
+
+      this.posts.forEach((post) => {
+        this.newComments[post.id] = {};
+      });
+    });
+
+    this.commentSvc.$comment.subscribe((comments) => {
+      this.comments = comments;
+    });
+  }
+
+  deletePost(id: number) {
+    this.postSvc.delete(id).subscribe();
+  }
+
+  addPost() {
+    if (this.user) {
+      const postToAdd: Partial<IPost> = {
+        ...this.newPost,
+        authorId: this.user.id,
+        likes: 0,
+      };
+      this.postSvc.create(postToAdd).subscribe(() => {
+        this.newPost = {};
+      });
+    }
+  }
+
+  toggleLike(post: IPost) {
+    if (!this.user || !this.user.favourites) {
+      return;
+    }
+
+    const index = this.user.favourites.indexOf(post.id);
+
+    if (index !== -1) {
+      this.user.favourites.splice(index, 1);
+      post.likes--;
+    } else {
+      this.user.favourites.push(post.id);
+      post.likes++;
+    }
+    this.postSvc.update(post).subscribe();
+    this.userSvc.update(this.user).subscribe();
+  }
+
+  deleteComment(id: number) {
+    this.commentSvc.delete(id).subscribe();
+  }
+
+  addComment(post: IPost) {
+    const newDate = new Date()
+    if (this.user && post) {
+      const commentToAdd: Partial<IComment> = {
+        ...this.newComments[post.id],
+        userId: this.user.id,
+        postId: post.id,
+        date: newDate.getTime()
+      };
+      this.commentSvc.create(commentToAdd).subscribe(() => {
+        this.newComments[post.id] = {};
+      });
+    }
+  }
 
   toggleComments(index: number) {
     this.showComments[index] = !this.showComments[index];
   }
 
-  loggedUserName:string = ""
-
-  deleteComment(id:number){
-    this.commentsSvc.deleteComment(id).subscribe()
+  filterPost(category: string) {
+    this.postSvc.$post.subscribe((posts) => {
+      this.posts = posts;
+    });
+    if (category === 'all') {
+      return;
+    }
+    this.posts = this.posts.filter((p) => p.category === category);
   }
-
 
 }

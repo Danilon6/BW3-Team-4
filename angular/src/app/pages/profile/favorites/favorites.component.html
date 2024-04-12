@@ -125,19 +125,19 @@
 
 
 
-  <div  class="cardcentral mb-4">
+  <div *ngFor="let post of posts;let i = index" class="cardcentral mb-4">
     <div class="body">
-      <h2></h2>
-      <p></p>
+      <h2>{{users[post.authorId-1].name}}</h2>
+      <p>{{post.title}}</p>
       <p class="text">
-
+        {{post.content}}
       </p>
       <p class="text">
-
+        {{post.category}}
       </p>
-      <div class="footer">
+      <div class="footer d-flex justify-content-between">
         <div>
-          <div>
+          <div (click)="toggleComments(i)">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -159,22 +159,7 @@
               </g></svg>0
           </div>
 
-
-
-          <label class="ui-bookmark pt-2">
-            <input type="checkbox" />
-            <div  class="bookmark">
-              <svg viewBox="0 0 32 32">
-                <g>
-                  <path
-                    d="M27 4v27a1 1 0 0 1-1.625.781L16 24.281l-9.375 7.5A1 1 0 0 1 5 31V4a4 4 0 0 1 4-4h14a4 4 0 0 1 4 4z"
-                  ></path>
-                </g>
-              </svg>
-            </div>
-          </label>
-
-          <div  title="Like" class="heart-container">
+          <div (click)="toggleLike(post)" title="Like" class="heart-container">
             <input id="Give-It-An-Id" class="checkbox" type="checkbox" />
             <div class="svg-container">
               <svg
@@ -204,30 +189,32 @@
               </svg>
             </div>
           </div>
-          <div class="text-dark"></div>
-
+        </div>
+        <div>
         </div>
       </div>
 
       <!-- INIZIO SEZIONE COMMENTI -->
-      <div  class="actionBox pt-4">
-        <div>
+      <div *ngIf="showComments[i]" class="actionBox pt-4 ">
+        <div *ngFor="let commento of comments ">
           <div class="commentText">
-            <p class=""></p> <span class="date sub-text">on March 5th, 2014</span>
+            <p class="">{{commento.content}}</p> <span class="date sub-text">{{commento.date}}</span>
           </div>
         </div>
-        <form class="d-flex align-items-center" role="form" #commentForm="ngForm">
+        <form class="d-flex align-items-center" role="form">
           <div class="form-group">
-            <textarea class="rounded" type="text" name="testo"  placeholder="cosa ne pensi?"></textarea>
-            <!-- [(ngModel)]="comment.testo" -->
+            <textarea class="rounded" type="text" name="testo" [(ngModel)]="newComments[post.id].content"
+              placeholder="cosa ne pensi?"></textarea>
           </div>
 
           <div class="form-group ms-3">
-            <button class="lable button">Invio </button>
+            <button (click)="addComment(post)" class="lable button">Invio </button>
           </div>
         </form>
       </div>
-  </div>
+      <!-- FINE SEZIONE COMMENTI -->
+
+    </div>
 
 
   </div>

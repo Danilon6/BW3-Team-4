@@ -1,480 +1,161 @@
 {
   "users": [
     {
-      "email": "mario@gmail.com",
-      "password": "$2a$10$FaUyJEiQDgmUTW1I8Fu./OWokVYDhqT11183VeFp4qs6TGXBCZeei",
-      "name": "mario",
-      "id": 2,
-      "myFavoritePostIds": [
-        7,
-        6,
-        8
-      ]
-    },
-    {
-      "email": "danilo@gmail.com",
-      "password": "$2a$10$2PJZ2Cc1v6TCzrA/jKKc4e45iFpsW88jGQNHL5Hsl0lH/iGA2FP56",
-      "name": "Danilo",
-      "id": 3,
-      "myFavoritePostIds": [
-        6,
-        7
-      ]
-    },
-    {
-      "email": "antonio@gmail.com",
-      "password": "$2a$10$/9/.hzQILFVY7Ax0XPEQB.Q67esb.l1cbL1BwBt66B4IJHk1zRSPW",
+      "email": "antonio@email.it",
+      "password": "$2a$10$DKRbKjF5C8m0KdhHISkcs.Pvz//LenQKgKAM6HzR8sJMG0AI7YXVS",
       "name": "antonio",
-      "id": 4,
-      "myFavoritePostIds": [
-        11
-      ]
+      "favourites": [
+        2
+      ],
+      "id": 1
     },
     {
-      "email": "gianluca@gmail.com",
-      "password": "$2a$10$CIUBWuPheI8WdAyDeCYhGesC13DFLEEWIzjBEuVQVCLK8TVOnQpha",
-      "name": "Gianluca",
-      "id": 5
+      "email": "beatrice@email.it",
+      "password": "$2a$10$OCEq3RiDlFOp5Sw2CBkd9eP4fdfwSKk5vBrp4I97hxVXHyM2.SA3e",
+      "name": "beatrice",
+      "favourites": [
+        2,
+        1,
+        5,
+        6,
+        3
+      ],
+      "id": 2
     },
     {
-      "email": "luigi@gmail.com",
-      "password": "$2a$10$/2h/DwqYuoq8KOqdrdCEXuRws8IByRt7nJYpL3ZstdzFWV.RBci62",
-      "name": "luigi",
-      "slug": "luigi",
-      "id": 6,
-      "myFavoritePostIds": []
-    },
-    {
-      "email": "andre@xfede.it",
-      "password": "$2a$10$JtIGvRgv/jxUWir9/wQK..B9ATe/BNo4HZzqsuSEmtd0Jon/vBOCy",
-      "name": "andre",
-      "slug": "andre",
-      "id": 7,
-      "myFavoritePostIds": [
+      "email": "danilo@email.it",
+      "password": "$2a$10$F58W4qTK6ke5QYKMzQKQWuSz6AXssP1.lra8xCQ6p3fMMh2eO214K",
+      "name": "danilo",
+      "favourites": [
+        3,
+        5,
+        8,
         7
-      ]
-    },
-    {
-      "email": "fede@gmail.com",
-      "password": "$2a$10$wLE72q1CUZMc3yofeuuKy.m8wfn4XshX30w0roeKpmXinBuy4wyJS",
-      "name": "fede",
-      "slug": "fede",
-      "id": 8,
-      "myFavoritePostIds": []
-    },
-    {
-      "email": "and@and.it",
-      "password": "$2a$10$20EwEVMhGOULlvQPx.kQ6ew45E439dUngVsUsw63JKN3Ijt7v/IIO",
-      "name": "and",
-      "slug": "and",
-      "id": 9,
-      "myFavoritePostIds": []
-    },
-    {
-      "email": "pippo@baudo",
-      "password": "$2a$10$Yr7KUrlXxVc4FeRVdJR4XOuM0J2G1bBtRjzdt1C1v6jnK/.3nJIPq",
-      "name": "pippo",
-      "slug": "pippo",
-      "id": 10,
-      "myFavoritePostIds": []
-    },
-    {
-      "email": "lelly@kelly.it",
-      "password": "$2a$10$0GvW0HShI/Kx6kP4ccWig.TyaiXpRKLcP37A0jdHck4I2NvkQGm0y",
-      "name": "lelly",
-      "slug": "lelly",
-      "id": 11
+      ],
+      "id": 3
     }
   ],
   "posts": [
     {
-      "id": 7,
-      "userId": 2,
-      "slug": "titolo-del-post",
-      "titolo": "Titolo del post nuovo",
-      "autore": "Nome dell'autore",
-      "contenuto": "Contenuto del post...",
-      "data_pubblicazione": "",
-      "categoria": "Categoria del post",
-      "likes": 15,
-      "commenti": [
-        1,
-        2,
-        3
-      ]
+      "title": "Adipisicing voluptas",
+      "content": "Quos in labore reici",
+      "category": "salute",
+      "authorId": 1,
+      "likes": 1,
+      "id": 1
     },
     {
-      "titolo": "new post",
-      "id": 6,
-      "userId": 2,
-      "commenti": [
-        3
-      ]
+      "title": "Commodi ab ut ea mol",
+      "content": "Et dolore aute irure",
+      "category": "economia",
+      "authorId": 1,
+      "likes": 1,
+      "id": 3
     },
     {
-      "titolo": "new post",
-      "id": 8,
-      "userId": 2
+      "title": "Deserunt nisi ipsum",
+      "content": "Eius aliqua Non vol",
+      "category": "sport",
+      "authorId": 1,
+      "likes": 2,
+      "id": 5
     },
     {
-      "titolo": "titolo diverso",
-      "id": 9
+      "title": "Architecto doloremqu",
+      "content": "Sunt consectetur eum",
+      "category": "politica",
+      "authorId": 1,
+      "likes": 1,
+      "id": 6
     },
     {
-      "titolo": "nuovo post",
+      "title": "Ratione id omnis inv",
+      "content": "Obcaecati ut amet v",
+      "category": "sport",
+      "authorId": 2,
+      "likes": 1,
+      "id": 7
+    },
+    {
+      "title": "Quia in duis non dol",
+      "content": "Dolore a laboriosam",
+      "category": "economia",
+      "authorId": 1,
+      "likes": 1,
+      "id": 8
+    },
+    {
+      "title": "Porro deserunt dolor",
+      "content": "Nesciunt cum ipsam ",
+      "category": "sport",
+      "authorId": 3,
+      "likes": 0,
       "id": 10
     },
     {
-      "titolo": "bel post",
+      "authorId": 1,
       "likes": 0,
       "id": 11
     }
   ],
   "comments": [
     {
-      "testo": "commento deifnitivo adesso",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
+      "content": "adsasdasd",
+      "userId": 1,
+      "postId": 5,
       "id": 1
     },
     {
-      "testo": "comemnto con data",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
+      "content": "swdeasdasd",
+      "userId": 3,
+      "postId": 10,
       "id": 2
     },
     {
-      "testo": "commento buono",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
+      "content": "ukhukuh",
+      "userId": 1,
+      "postId": 1,
+      "date": 1712916203697,
       "id": 3
     },
     {
-      "testo": "comemnto",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
+      "content": "iuih",
+      "userId": 1,
+      "postId": 1,
+      "date": 1712916207860,
       "id": 4
     },
     {
-      "testo": "aaaaaa",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
+      "content": "dsasa",
+      "userId": 1,
+      "postId": 1,
+      "date": 1712916371604,
       "id": 5
     },
     {
-      "testo": "nuovo commento forse si aggiorna",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
+      "userId": 1,
+      "postId": 1,
       "id": 6
     },
     {
-      "testo": "dddd",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
+      "userId": 1,
+      "postId": 3,
       "id": 7
     },
     {
-      "testo": "jjjj",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
+      "userId": 1,
+      "postId": 5,
       "id": 8
     },
     {
-      "testo": "pppp",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
+      "userId": 1,
+      "postId": 6,
       "id": 9
     },
     {
-      "testo": "dsa",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
+      "userId": 1,
+      "postId": 1,
       "id": 10
-    },
-    {
-      "testo": "ads",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
-      "id": 11
-    },
-    {
-      "testo": "das",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
-      "id": 12
-    },
-    {
-      "testo": "dhfd",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
-      "id": 13
-    },
-    {
-      "testo": "dass",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
-      "id": 14
-    },
-    {
-      "testo": "dfd",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
-      "id": 15
-    },
-    {
-      "testo": "dsa",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
-      "id": 16
-    },
-    {
-      "testo": "dsa",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
-      "id": 17
-    },
-    {
-      "testo": "sadsa",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
-      "id": 18
-    },
-    {
-      "testo": "sa",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
-      "id": 19
-    },
-    {
-      "testo": "sa",
-      "userid": 4,
-      "autore": "antonio",
-      "data": "9/4/2024",
-      "id": 20
-    },
-    {
-      "testo": "ciao",
-      "userid": 6,
-      "autore": "luigi",
-      "data": "10/4/2024",
-      "id": 21
-    },
-    {
-      "testo": "ciao",
-      "userid": 6,
-      "autore": "luigi",
-      "data": "10/4/2024",
-      "id": 22
-    },
-    {
-      "userid": 6,
-      "autore": "luigi",
-      "data": "10/4/2024",
-      "id": 23
-    },
-    {
-      "testo": "dd",
-      "userid": 6,
-      "autore": "luigi",
-      "data": "10/4/2024",
-      "id": 24
-    },
-    {
-      "testo": "df",
-      "userid": 6,
-      "autore": "luigi",
-      "data": "10/4/2024",
-      "id": 25
-    },
-    {
-      "testo": "xsa",
-      "userid": 6,
-      "autore": "luigi",
-      "data": "10/4/2024",
-      "id": 26
-    },
-    {
-      "testo": "d",
-      "userid": 6,
-      "autore": "luigi",
-      "data": "10/4/2024",
-      "id": 27
-    },
-    {
-      "testo": "sd",
-      "userid": 6,
-      "autore": "luigi",
-      "data": "10/4/2024",
-      "id": 28
-    },
-    {
-      "testo": "sdsd",
-      "userid": 6,
-      "autore": "luigi",
-      "data": "10/4/2024",
-      "id": 29
-    },
-    {
-      "testo": "ds",
-      "userid": 6,
-      "autore": "luigi",
-      "data": "10/4/2024",
-      "id": 30
-    },
-    {
-      "testo": "sdsd",
-      "userid": 6,
-      "autore": "luigi",
-      "data": "10/4/2024",
-      "id": 31
-    },
-    {
-      "testo": "sdsd",
-      "userid": 6,
-      "autore": "luigi",
-      "data": "10/4/2024",
-      "id": 32
-    },
-    {
-      "testo": "we",
-      "userid": 6,
-      "autore": "luigi",
-      "data": "10/4/2024",
-      "id": 33
-    },
-    {
-      "testo": "ndgbddgbdbdb",
-      "userid": 5,
-      "autore": "Gianluca",
-      "data": "10/4/2024",
-      "id": 34
-    },
-    {
-      "testo": "hjhgjhj",
-      "userid": 7,
-      "autore": "andre",
-      "data": "10/4/2024",
-      "id": 35
-    },
-    {
-      "userid": 8,
-      "autore": "fede",
-      "data": "11/4/2024",
-      "id": 36
-    },
-    {
-      "testo": null,
-      "userid": 8,
-      "autore": "fede",
-      "data": "11/4/2024",
-      "id": 37
-    },
-    {
-      "testo": null,
-      "userid": 8,
-      "autore": "fede",
-      "data": "11/4/2024",
-      "id": 38
-    },
-    {
-      "testo": null,
-      "userid": 8,
-      "autore": "fede",
-      "data": "11/4/2024",
-      "id": 39
-    },
-    {
-      "testo": null,
-      "userid": 8,
-      "autore": "fede",
-      "data": "11/4/2024",
-      "id": 40
-    },
-    {
-      "userid": 8,
-      "autore": "fede",
-      "data": "11/4/2024",
-      "id": 41
-    },
-    {
-      "userid": 8,
-      "autore": "fede",
-      "data": "11/4/2024",
-      "id": 42
-    },
-    {
-      "testo": null,
-      "userid": 8,
-      "autore": "fede",
-      "data": "11/4/2024",
-      "id": 43
-    },
-    {
-      "testo": null,
-      "userid": 8,
-      "autore": "fede",
-      "data": "11/4/2024",
-      "id": 44
-    },
-    {
-      "userid": 8,
-      "autore": "fede",
-      "data": "11/4/2024",
-      "id": 45
-    },
-    {
-      "testo": null,
-      "userid": 8,
-      "autore": "fede",
-      "data": "11/4/2024",
-      "id": 46
-    },
-    {
-      "testo": null,
-      "userid": 8,
-      "autore": "fede",
-      "data": "11/4/2024",
-      "id": 47
-    },
-    {
-      "testo": null,
-      "userid": 8,
-      "autore": "fede",
-      "data": "11/4/2024",
-      "id": 48
-    },
-    {
-      "testo": "bdgvòbmvdkbmdfkpbmdfkmbdfkpbm",
-      "userid": 8,
-      "autore": "fede",
-      "data": "11/4/2024",
-      "id": 49
-    },
-    {
-      "testo": "bjvhnjhjhjhgjghj",
-      "userid": 8,
-      "autore": "fede",
-      "data": "11/4/2024",
-      "id": 50
     }
   ]
 }

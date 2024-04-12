@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BehaviorSubject, Observable, map, tap } from 'rxjs';
-import { iUser } from '../models/i-user';
+import { IUser } from '../models/i-user';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment.development';
 import { iLoginData } from '../models/i-login-data';
 
-type accessData = {
+type AccessData = {
   accessToken:string,
-  user:iUser
+  user:IUser
 }
 
 @Injectable({
@@ -17,84 +17,91 @@ type accessData = {
 })
 export class AuthService {
 
-  jwtHelper: JwtHelperService= new JwtHelperService()
+  registerUrl: string = environment.registerUrl;
+  loginUrl: string = environment.loginUrl;
+  userUrl: string = environment.usersUrl;
 
-  authSubject = new BehaviorSubject<iUser | null>(null)
+  jwtHelper: JwtHelperService = new JwtHelperService();
 
-  $user = this.authSubject.asObservable()
+  authSubject = new BehaviorSubject<IUser | null>(null);
 
-  syncIsLoggedIn:boolean = false
+  user$ = this.authSubject.asObservable();
+  syncIsLoggedIn: boolean = false;
 
-  $isLoggedIn = this.$user.pipe(
-    map(user => !!user),
-    tap(user => this.syncIsLoggedIn = user)
-  )
+  isLoggedIn$ = this.user$.pipe(
+    map((user) => !!user),
+    tap((user) => (this.syncIsLoggedIn = user))
+  );
 
-  constructor(
-    private http:HttpClient,
-    private route:Router
-  ){
-    this.getUserAfterRefresh()
+  isUserRegisteredSubject = new BehaviorSubject<boolean>(false);
+  isUserRegistered$ = this.isUserRegisteredSubject.asObservable();
+
+  constructor(private http: HttpClient, private router: Router) {}
+
+  register(newUser: Partial<IUser>): Observable<AccessData> {
+    return this.http
+      .post<AccessData>(this.registerUrl, { ...newUser, favourites: [] })
+      .pipe(
+        tap((data) => {
+          this.authSubject.next(data.user);
+          localStorage.setItem('accessData', JSON.stringify(data));
+
+          this.autoLogout(data.accessToken);
+
+          this.isUserRegisteredSubject.next(true);
+        })
+      );
   }
 
+  login(loginData: iLoginData): Observable<AccessData> {
+    return this.http.post<AccessData>(this.loginUrl, loginData).pipe(
+      tap((data) => {
+        this.authSubject.next(data.user);
+        localStorage.setItem('accessData', JSON.stringify(data));
 
-    registerUrl:string = environment.registerUrl
-    loginUrl:string = environment.loginUrl
+        this.autoLogout(data.accessToken);
+      })
+    );
+  }
 
+  logout() {
+    this.authSubject.next(null);
+    localStorage.removeItem('accessData');
 
-    register(newUser:Partial<iUser>): Observable<accessData>{
-      const newUserObj = {...newUser, slug: newUser.name}
-      return this.http.post<accessData>(this.registerUrl, newUserObj)
-      .pipe(tap(data =>{
-        this.authSubject.next(data.user)
-        localStorage.setItem("accessData", JSON.stringify(data))
-      }))
-    }
+    this.router.navigate(['/']);
+  }
 
-    login(loginData:iLoginData):Observable<accessData>{
-      return this.http.post<accessData>(this.loginUrl, loginData)
-      .pipe(tap(data =>{
-        this.authSubject.next(data.user)
-        localStorage.setItem("accessData", JSON.stringify(data))
-        this.autologout(data.accessToken)
-      }))
-    }
-
-    logout():void{
-      this.authSubject.next(null)
-      localStorage.removeItem("accessData")
-      this.route.navigate([""])
-    }
-
-    autologout(jwt:string):void{
-      const expirationDate = this.jwtHelper.getTokenExpirationDate(jwt) as Date
-      const exiprationMs = expirationDate.getTime() - new Date().getTime()
+  autoLogout(jwt: string) {
+    const expDate = this.jwtHelper.getTokenExpirationDate(jwt) as Date;
+    const expMs = expDate.getTime() - new Date().getTime();
 
     setTimeout(() => {
-      this.logout()
-    }, exiprationMs)
-    }
+      this.logout();
+    }, expMs);
+  }
 
-    getUserAfterRefresh():void{
-      const user = localStorage.getItem("accessData")
-      if (!user) return
+  restoreUser() {
+    const userJson = localStorage.getItem('accessData');
+    if (!userJson) return;
 
-      const accessData:accessData = JSON.parse(user)
+    const accessData: AccessData = JSON.parse(userJson);
+    if (this.jwtHelper.isTokenExpired(accessData.accessToken)) return;
 
-      if (this.jwtHelper.isTokenExpired(accessData.accessToken)) return
+    this.authSubject.next(accessData.user);
+    this.autoLogout(accessData.accessToken);
+  }
 
-      this.authSubject.next(accessData.user)
-      this.autologout(accessData.accessToken)
-    }
+  getAccessToken(): string {
+    const userJson = localStorage.getItem('accessData');
+    if (!userJson) return '';
 
-    getAuthToken():string{
-      const user = localStorage.getItem("accessData")
-      if (!user) return ""
+    const accessData: AccessData = JSON.parse(userJson);
+    if (this.jwtHelper.isTokenExpired(accessData.accessToken)) return '';
 
-      const accessData:accessData = JSON.parse(user)
+    return accessData.accessToken;
+  }
 
-      if (this.jwtHelper.isTokenExpired(accessData.accessToken)) return ""
-
-      return accessData.accessToken
-    }
+  update(user: IUser) {
+    return this.http.put<IUser>(this.userUrl + `/${user.id}`, user);
+  }
 }

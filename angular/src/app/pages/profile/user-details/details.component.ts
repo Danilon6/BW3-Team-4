@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../../auth/auth.service';
-import { iUser } from '../../../models/i-user';
+import { IUser } from '../../../models/i-user';
 
 @Component({
   selector: 'app-details',
@@ -10,12 +10,12 @@ import { iUser } from '../../../models/i-user';
 export class DetailsComponent {
 
 
-  user: iUser | undefined;
+  user: IUser | undefined;
 
   constructor(private authSvc: AuthService) {}
 
   ngOnInit() {
-    this.authSvc.$user.subscribe((user) => {
+    this.authSvc.user$.subscribe((user) => {
       this.user = user || undefined;
     });
   }

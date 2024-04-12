@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-import { iUser } from '../../models/i-user';
+import { IUser } from '../../models/i-user';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +9,7 @@ import { iUser } from '../../models/i-user';
   styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
-  newUser:Partial<iUser> = {}
+  newUser:Partial<IUser> = {}
 
   constructor(
     private authSvc:AuthService,

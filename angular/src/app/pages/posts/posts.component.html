@@ -1,218 +1,158 @@
 <div class="container2 py-5 justify-content-center">
-<div class="row ">
+  <div class="row ">
 
 
 
-<div class="col-md-3 ">
+    <div class="col-md-3 ">
 
 
-  <app-leftside></app-leftside>
-
-
-  </div>
-
-
-
-<div class="col-md-6  ">
-
-  <div class="Search">
-    <div class="SearchInner">
-    <h2>Fai una ricerca per categoria</h2>
-
-    <div class="container align-items-center ">
-
-      <button class="btn lable button me-4">Sport</button>
-      <button class="btn lable button me-4">Politica</button>
-      <button class="btn lable button me-4">Salute</button>
-      <button class="btn lable button me-4">Cibo</button>
-      <button class="btn lable button me-4">Ambiente</button>
-      <button onclick="window.dialog.showModal();" class="button ms-3 ">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill " viewBox="0 0 16 16">
-          <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z"/>
-        </svg>    <span class="lable">Post</span>
-  </button>
-
-
-  <dialog id="dialog">
-
-
-    <form class="form">
-      <div class="title">Scrivi il tuo Post </div>
-      <input type="text" placeholder="titolo">
-      <select class="form" type="text">
-        <option>-------------</option>
-        <option> Sport</option>
-        <option> Politica</option>
-        <option> Salute</option>
-        <option> Cibo</option>
-        <option> Ambiente</option>
-        <option> Wichele Tedesco</option>
-
-      </select>
-      <textarea placeholder="A cosa stai pensando?"></textarea>
-
-      <button>Pubblica</button>
-  </form>
-
-    <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
-</dialog>
+      <app-leftside></app-leftside>
 
 
     </div>
-  </div>
-  </div>
 
 
 
+    <div class="col-md-6  ">
 
-  <div *ngFor="let post of postArr;let i = index" class="cardcentral mb-4">
-    <div class="body">
-      <h2>{{post.autore}}</h2>
-      <p>{{post.titolo}}</p>
-      <p class="text">
-        {{post.contenuto}}
-      </p>
-      <p class="text">
-        {{post.categoria}}
-      </p>
-      <div class="footer">
-        <div>
-          <div (click)="toggleComments(i); getcomment(post)">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
+      <div class="Search">
+        <div class="SearchInner">
+          <h2>Fai una ricerca per categoria</h2>
+
+          <div class="container align-items-center ">
+            <button (click)="filterPost('all')" class="btn btn-outline-info">All</button>
+            <button (click)="filterPost('sport')" class="btn btn-outline-info">Sport</button>
+            <button (click)="filterPost('salute')" class="btn btn-outline-info">Salute</button>
+            <button (click)="filterPost('economia')" class="btn btn-outline-info">Economia</button>
+            <button (click)="filterPost('politica')" class="btn btn-outline-info">Politica</button>
+            <button (click)="filterPost('epicode')" class="btn btn-outline-info">Epicode</button>
+            <button onclick="window.dialog.showModal();" class="button ms-3 ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-pencil-fill " viewBox="0 0 16 16">
                 <path
-                  d="M16 10H16.01M12 10H12.01M8 10H8.01M3 10C3 4.64706 5.11765 3 12 3C18.8824 3 21 4.64706 21 10C21 15.3529 18.8824 17 12 17C11.6592 17 11.3301 16.996 11.0124 16.9876L7 21V16.4939C4.0328 15.6692 3 13.7383 3 10Z"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-              </g></svg>
+                  d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+              </svg> <span class="lable">Post</span>
+            </button>
+
+
+            <dialog id="dialog">
+
+
+              <form class="form">
+                <div class="title">Scrivi il tuo Post </div>
+                <input type="text" placeholder="titolo">
+                <select class="form" type="text">
+                  <option>Seleziona una categoria</option>
+                  <option> Sport</option>
+                  <option> Politica</option>
+                  <option> Salute</option>
+                  <option> Cibo</option>
+                  <option> Ambiente</option>
+                  <option> Wichele Tedesco</option>
+
+                </select>
+                <textarea placeholder="A cosa stai pensando?"></textarea>
+
+                <button (click)="addPost()" >Pubblica</button>
+              </form>
+
+              <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+            </dialog>
+
+
           </div>
-
-
-
-          <label class="ui-bookmark pt-3">
-            <input type="checkbox" />
-            <div (click)="favorite(post.id)" class="bookmark">
-              <svg viewBox="0 0 32 32">
-                <g>
-                  <path
-                    d="M27 4v27a1 1 0 0 1-1.625.781L16 24.281l-9.375 7.5A1 1 0 0 1 5 31V4a4 4 0 0 1 4-4h14a4 4 0 0 1 4 4z"
-                  ></path>
-                </g>
-              </svg>
-            </div>
-          </label>
-
-          <div (click)="like(post)" title="Like" class="heart-container">
-            <input id="Give-It-An-Id" class="checkbox" type="checkbox" />
-            <div class="svg-container">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="svg-outline"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
-                ></path>
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="svg-filled"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"
-                ></path>
-              </svg>
-
-            </div>
-            <div class="text-dark px-2 ">{{post.likes}}</div>
-          </div>
-
         </div>
       </div>
 
-      <!-- INIZIO SEZIONE COMMENTI -->
-      <div *ngIf="showComments[i]" class="actionBox pt-4 ">
-        <div *ngFor="let commento of commentiPostArr[post.id] ">
-          <div class="commentText">
-            <p class="">{{commento.testo}}</p> <span class="date sub-text">on March 5th, 2014</span>
+
+
+
+      <div *ngFor="let post of posts;let i = index" class="cardcentral mb-4">
+        <div class="body">
+          <h2>{{users[post.authorId-1].name}}</h2>
+          <p>{{post.title}}</p>
+          <p class="text">
+            {{post.content}}
+          </p>
+          <p class="text">
+            {{post.category}}
+          </p>
+          <div class="footer">
+            <div>
+              <div (click)="toggleComments(i)">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M16 10H16.01M12 10H12.01M8 10H8.01M3 10C3 4.64706 5.11765 3 12 3C18.8824 3 21 4.64706 21 10C21 15.3529 18.8824 17 12 17C11.6592 17 11.3301 16.996 11.0124 16.9876L7 21V16.4939C4.0328 15.6692 3 13.7383 3 10Z"
+                      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </g>
+                </svg>
+              </div>
+
+
+
+
+              <div (click)="toggleLike(post)" title="Like" class="heart-container">
+                <input id="Give-It-An-Id" class="checkbox" type="checkbox" />
+                <div class="svg-container">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="svg-outline" viewBox="0 0 24 24">
+                    <path
+                      d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                    </path>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="svg-filled" viewBox="0 0 24 24">
+                    <path
+                      d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                    </path>
+                  </svg>
+
+                </div>
+                <div class="text-dark px-2 ">{{post.likes}}</div>
+              </div>
+
+            </div>
           </div>
+
+          <!-- INIZIO SEZIONE COMMENTI -->
+          <div *ngIf="showComments[i]" class="actionBox pt-4 ">
+            <div *ngFor="let commento of comments ">
+              <div class="commentText">
+                <p class="fw-bold">{{users[commento.userId-1].name}}</p>
+                <p class="">{{commento.content}}</p> <span class="date sub-text">{{commento.date}}</span>
+              </div>
+            </div>
+            <form class="d-flex align-items-center" role="form">
+              <div class="form-group">
+                <textarea class="rounded" type="text" name="testo" [(ngModel)]="newComments[post.id].content"
+                  placeholder="cosa ne pensi?"></textarea>
+              </div>
+
+              <div class="form-group ms-3">
+                <button (click)="addComment(post)" class="lable button">Invio </button>
+              </div>
+            </form>
+          </div>
+          <!-- FINE SEZIONE COMMENTI -->
         </div>
-        <form class="d-flex align-items-center" role="form" (ngSubmit)="submitComment(commentForm, post)" #commentForm="ngForm">
-          <div class="form-group">
-            <textarea class="rounded" type="text" name="testo" [(ngModel)]="comment.testo" placeholder="cosa ne pensi?"></textarea>
-          </div>
-
-          <div class="form-group ms-3">
-            <button class="lable button">Invio </button>
-          </div>
-        </form>
       </div>
-      <!-- FINE SEZIONE COMMENTI -->
+
+
+
+
+
+
+
+
     </div>
-  </div>
 
 
 
+    <div class="col-md-3  flex-column justify-content-center">
 
 
+      <app-rightside></app-rightside>
 
 
-
-</div>
-
-
-
-<div class="col-md-3  flex-column justify-content-center">
-
-
-  <app-rightside></app-rightside>
-
-
-</div>
-
-
-
-<!-- <div class="text-white" *ngFor="let post of postArr; let i = index ">
-
-<div>{{post.titolo}}</div>
-<div>{{post.autore}}</div>
-<div>{{post.categoria}}</div>
-<button (click)="toggleComments(i); getcomment(post)" >MOSTRA COMMENTI</button>
-
-
-
-<div class="text-white">{{post.likes}}</div>
-<button (click)="like(post)"> LIKE</button>
-<button (click)="favorite(post.id)">ADD TO LIKED</button>
-
-</div> -->
-
-
-<!-- TEST ADD -->
-
-<!-- <form (ngSubmit)="submitForm(commentForm)" #commentForm="ngForm">
-  <div class="mb-3">
-    <label for="title" class="form-label">Title</label>
-    <input type="text" class="form-control" id="title" name="title" [(ngModel)]="newPost.titolo"
-      placeholder="Enter title" required #title="ngModel">
-    <div *ngIf="title.invalid && title.dirty" class="alert alert-danger">
-      You must enter a title
     </div>
-    </div>
-</form>
--->
-
-

@@ -1,9 +1,8 @@
-export interface iUser {
+export interface IUser {
   id: number
-  slug:string
-  email: string
-  password: string
-  name: string
-  myPostIds: number[]
-  myFavoritePostIds: number[]
+  name: string;
+  email: string;
+  password?: string;
+
+  favourites: number[];
 }

@@ -14,7 +14,7 @@ export class FooterComponent {
 
   ngOnInit(){
 
-    this.authSvc.$isLoggedIn.subscribe(data => {
+    this.authSvc.isLoggedIn$.subscribe(data => {
 
       this.isUserLoggedIn = data;
 
